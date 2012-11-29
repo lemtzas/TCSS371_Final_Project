@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Project 3" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\Project 3" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\Project 3" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="1" />
+				<Option compiler="cygwin" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="alu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="alu.h" />
+		<Unit filename="and_gate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="and_gate.h" />
+		<Unit filename="bit_def.h" />
+		<Unit filename="bit_man.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="nand_gate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="nand_gate.h" />
+		<Unit filename="nor_gate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="nor_gate.h" />
+		<Unit filename="not_gate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="not_gate.h" />
+		<Unit filename="or_gate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="or_gate.h" />
+		<Unit filename="psr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="psr.h" />
+		<Unit filename="rca.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="rca.h" />
+		<Unit filename="readme.txt" />
+		<Unit filename="register.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="register.h" />
+		<Unit filename="register_set.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="register_set.h" />
+		<Unit filename="xor_gate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="xor_gate.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

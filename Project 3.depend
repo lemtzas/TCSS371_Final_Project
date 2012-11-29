@@ -1,0 +1,95 @@
+# depslib dependency file v1.0
+1353127533 source:c:\users\lemtzas\dropbox\school\tcss371\project 3\alu.c
+	"alu.h"
+	"register.h"
+	"bit_def.h"
+	"and_gate.h"
+	"or_gate.h"
+	"not_gate.h"
+	"rca.h"
+	"psr.h"
+
+1353126314 c:\users\lemtzas\dropbox\school\tcss371\project 3\alu.h
+	"rca.h"
+	"register.h"
+	"psr.h"
+
+1353108468 c:\users\lemtzas\dropbox\school\tcss371\project 3\rca.h
+	"bit_def.h"
+	"register.h"
+
+1351219810 c:\users\lemtzas\dropbox\school\tcss371\project 3\bit_def.h
+
+1351216392 source:c:\users\lemtzas\dropbox\school\tcss371\project 3\and_gate.c
+	<stdio.h>
+	"bit_def.h"
+
+1351216393 source:c:\users\lemtzas\dropbox\school\tcss371\project 3\bit_man.c
+	"bit_def.h"
+
+1351216393 source:c:\users\lemtzas\dropbox\school\tcss371\project 3\nand_gate.c
+	<stdio.h>
+	"bit_def.h"
+	"and_gate.h"
+	"not_gate.h"
+
+1351216393 c:\users\lemtzas\dropbox\school\tcss371\project 3\and_gate.h
+	"bit_def.h"
+
+1351216394 c:\users\lemtzas\dropbox\school\tcss371\project 3\not_gate.h
+	"bit_def.h"
+
+1351216393 source:c:\users\lemtzas\dropbox\school\tcss371\project 3\nor_gate.c
+	<stdio.h>
+	"bit_def.h"
+	"or_gate.h"
+	"not_gate.h"
+
+1351216394 c:\users\lemtzas\dropbox\school\tcss371\project 3\or_gate.h
+	"bit_def.h"
+
+1351216394 source:c:\users\lemtzas\dropbox\school\tcss371\project 3\not_gate.c
+	<stdio.h>
+	"bit_def.h"
+
+1351216394 source:c:\users\lemtzas\dropbox\school\tcss371\project 3\or_gate.c
+	<stdio.h>
+	"bit_def.h"
+
+1353040695 source:c:\users\lemtzas\dropbox\school\tcss371\project 3\rca.c
+	"rca.h"
+	"or_gate.h"
+	"xor_gate.h"
+	"and_gate.h"
+
+1351216395 c:\users\lemtzas\dropbox\school\tcss371\project 3\xor_gate.h
+	"bit_def.h"
+
+1351216395 source:c:\users\lemtzas\dropbox\school\tcss371\project 3\xor_gate.c
+	<stdio.h>
+	"bit_def.h"
+
+1353127920 source:c:\users\lemtzas\dropbox\school\tcss371\project 3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	"alu.h"
+
+1353126213 c:\users\lemtzas\dropbox\school\tcss371\project 3\register.h
+	"bit_def.h"
+
+1353111179 source:c:\users\lemtzas\dropbox\school\tcss371\project 3\register_set.c
+	"register_set.h"
+
+1353126150 source:c:\users\lemtzas\dropbox\school\tcss371\project 3\register.c
+	"register.h"
+
+1353111038 c:\users\lemtzas\dropbox\school\tcss371\project 3\register_set.h
+	"register.h"
+
+1353125990 c:\users\lemtzas\dropbox\school\tcss371\project 3\psr.h
+	"register.h"
+
+1353125967 source:c:\users\lemtzas\dropbox\school\tcss371\project 3\psr.c
+	"psr.h"
+
