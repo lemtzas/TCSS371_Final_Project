@@ -164,12 +164,13 @@
 	"memory.h"
 	"registers.h"
 
-1354355877 c:\users\mojito\documents\github\tcss371_final_project\memory.h
+1354356015 c:\users\mojito\documents\github\tcss371_final_project\memory.h
 	"register.h"
 	"registers.h"
 
-1354354245 c:\users\mojito\documents\github\tcss371_final_project\registers.h
+1354356117 c:\users\mojito\documents\github\tcss371_final_project\registers.h
 	"register.h"
+	"psr.h"
 
 1353127533 source:c:\users\mojito\documents\github\tcss371_final_project\alu.c
 	"alu.h"
@@ -233,4 +234,7 @@
 	"CPU.h"
 	"controller.h"
 	"alu.h"
+
+1354355958 source:c:\users\mojito\documents\github\tcss371_final_project\memory.c
+	"memory.h"
 

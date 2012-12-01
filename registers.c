@@ -46,22 +46,22 @@ Register* _registers_id_to_register_ptr(Registers *this, unsigned short REGISTER
         case 5:
         case 6:
         case 7:
-            return &(registers->r[REGISTER_ID])
+            return &(this->r[REGISTER_ID]);
             break;
         case REG_IR: //8
-            return &(registers->ir);
+            return &(this->ir);
             break;
         case REG_PC: //9
-            return &(registers->pc);
+            return &(this->pc);
             break;
         case REG_MAR: //10
-            return &(registers->mar);
+            return &(this->mar);
             break;
         case REG_MDR: //11
-            return &(registers->mdr);
+            return &(this->mdr);
             break;
         case REG_PSR: //12
-            return &(registers->psr);
+            return &(this->psr);
             break;
         default: //OH GOD PANIC!
             exit(5);

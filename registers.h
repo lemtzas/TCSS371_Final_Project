@@ -40,4 +40,6 @@ char* registers_get_register( Registers *registers , Register *register_out , un
 //char* error_string registers_set_register(  Registers *registers , Register *register_out , unsigned short REGISTER_ID )
 char* registers_set_register( Registers *registers , Register register_in , unsigned short REGISTER_ID );
 
+Register* _registers_id_to_register_ptr(Registers *this, unsigned short REGISTER_ID);
+
 #endif
