@@ -10,24 +10,36 @@ char* memory_initialize( Memory *this )
 }
 
 
-//char* error_string memory_get_location( Memory *memory , Register *data_out , unsigned short address)
-char* memory_get_location( Memory *this, Register *data_out , unsigned short address)
+//char* error_string memory_get( Memory *memory , Register *data_out , unsigned short address)
+char* memory_get( Memory *this, Registers *registers)
 {
-    if(this == 0) return "memory_get_location: this must not be null";
-    if(address >= LCPLUS_MEMORY_SIZE || address < 0 ) return "memory_get_location: address out of range";
-    if(data_out == 0) return "memory_get_locoation: data out must not be null";
-    (*data_out) = this->location[address];
+    Register mar_tmp;
+    Register mdr_tmp;
+    registers_get_register(registers,&mar,REG_MAR);
+
+    if(this == 0) return "memory_get: this must not be null";
+    if(mar_tmp >= LCPLUS_MEMORY_SIZE || mar_tmp < 0 ) return "memory_get: mar out of range";
+
+    mdr_tmp = this->location[mar_tmp];
+
+    registers_get_register(registers,mdr,REG_MDR);
 
     return 0;
 }
 
 
-//char* error_string memory_set_location( Memory *memory , Register data_in , unsigned short address)
-char* memory_set_location( Memory *this , Register data_in , unsigned short address)
+//char* error_string memory_set( Memory *memory , Register data_in , unsigned short address)
+char* memory_set( Memory *this , Registers *registers)
 {
-    if(this == 0) return "memory_set_location: this must not be null";
-    if(address >= LCPLUS_MEMORY_SIZE || address < 0 ) return "memory_set_location: address out of range";
-    this->location[address] = data_in;
+    Register mar_tmp;
+    Register mdr_tmp;
+    registers_get_register(registers,&mdr,REG_MDR);
+    registers_get_register(registers,&mar,REG_MAR);
+
+    if(this == 0) return "memory_set: this must not be null";
+    if(mar_tmp >= LCPLUS_MEMORY_SIZE || mar_tmp < 0 ) return "memory_set: mar out of range";
+
+    this->location[mar_tmp] = mdr_tmp;
 
     return 0;
 }

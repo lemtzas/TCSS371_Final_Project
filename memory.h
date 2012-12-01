@@ -2,6 +2,7 @@
 #define MEMORY_H
 
 #include "register.h"
+#include "registers.h"
 
 #define LCPLUS_MEMORY_SIZE  0x1000
 

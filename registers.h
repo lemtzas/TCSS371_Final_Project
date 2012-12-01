@@ -21,7 +21,15 @@
 #define REG_PSR 12
 
 typedef struct {
+    Register r[8];  //the 8 program registers
 
+    Register ir;    //IR
+    Register pc;    //PC
+
+    Register mar;   //MAR
+    Register mdr;   //MDR
+
+    PSR psr;        //is a register, but with added functionality.
 } Registers;
 
 //char* error_string registers_initialize( Registers *registers )
