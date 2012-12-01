@@ -1,6 +1,7 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
 
+#include "register.h"
 #include "registers.h"
 #include "alu.h"
 #include "memory.h"
