@@ -191,10 +191,10 @@
 1353125990 c:\users\mojito\documents\github\tcss371_final_project\psr.h
 	"register.h"
 
-1354351304 source:c:\users\mojito\documents\github\tcss371_final_project\controller.c
+1354362723 source:c:\users\mojito\documents\github\tcss371_final_project\controller.c
 	"controller.h"
 
-1354362693 c:\users\mojito\documents\github\tcss371_final_project\controller.h
+1354363130 c:\users\mojito\documents\github\tcss371_final_project\controller.h
 	"register.h"
 	"registers.h"
 	"alu.h"

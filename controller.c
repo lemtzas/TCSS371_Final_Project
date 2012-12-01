@@ -9,7 +9,7 @@ char* controller_run_step(Controller *this, ALU *alu, Registers *registers, Memo
     registers_set_register(registers,temp,REG_MAR);
 
     //PC <- PC + 1
-    registers_set_registeR(registers,++temp,REG_PC);
+    registers_set_register(registers,++temp,REG_PC);
 
     //LOAD MEMORY
     memory_get(memory,registers);

@@ -83,46 +83,60 @@ typedef struct {
 ///HALT
 typedef struct {
     unsigned short code:4;
-    unsigned short junk:12;
+    unsigned short zeros:12;
 } _DATAMASK_HALT;
 
 ///JMP
 typedef struct {
     unsigned short code:4;
-    unsigned short junk:12;
+    unsigned short c:1;
+    unsigned short o:1;
+    unsigned short n:1;
+    unsigned short z:1;
+    unsigned short p:1;
+    signed short pcoffset7:7;
 } _DATAMASK_JMP;
 
 ///BR
 typedef struct {
     unsigned short code:4;
-    unsigned short junk:12;
+    unsigned short zeros:3;
+    unsigned short baser:3;
+    unsigned short zeros2:6;
 } _DATAMASK_BR;
 
 ///LDs
 typedef struct {
     unsigned short code:4;
-    unsigned short junk:12;
+    unsigned short dr:3;
+    unsigned short pcoffset9:9;
 } _DATAMASK_LD;
 
 typedef struct {
     unsigned short code:4;
-    unsigned short junk:12;
+    unsigned short dr:3;
+    unsigned short baser:3;
+    unsigned short pcoffset6:6;
 } _DATAMASK_LDR;
 
 typedef struct {
     unsigned short code:4;
-    unsigned short junk:12;
+    unsigned short dr:3;
+    unsigned short pcoffset9:9;
 } _DATAMASK_LEA;
 
 ///STs
 typedef struct {
     unsigned short code:4;
-    unsigned short junk:12;
+    unsigned short dr:3;
+    unsigned short pcoffset9:9;
 } _DATAMASK_ST;
 
 typedef struct {
     unsigned short code:4;
-    unsigned short junk:12;
+    unsigned short dr:3;
+    unsigned short baser:3;
+    unsigned short pcoffset6:6;
 } _DATAMASK_STR;
 
 
