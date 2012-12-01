@@ -7,7 +7,7 @@ char* debug_monitor( Debug *this, CPU *cpu , Registers *registers , Memory *memo
 }
 
 
-char* debug_do_step_ask( Debug *this, CPU *cpu , Registers *registers, Memory *memory, Boolean *result )
+char* debug_do_step_ask( Debug *this, CPU *cpu , Registers *registers, Memory *memory, unsigned char *result )
 {
     return 0;
 }

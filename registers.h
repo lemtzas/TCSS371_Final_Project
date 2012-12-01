@@ -20,11 +20,15 @@
 
 #define REG_PSR 12
 
+typedef struct {
+
+} Registers;
+
 //char* error_string registers_initialize( Registers *registers )
-char* registers_initialize( Registers *registers )
+char* registers_initialize( Registers *registers );
 //char* error_string registers_get_register(  Registers *registers , Register *register_out , unsigned short REGISTER_ID )
-char* registers_get_register( Registers *registers , Register *register_out , unsigned short REGISTER_ID )
+char* registers_get_register( Registers *registers , Register *register_out , unsigned short REGISTER_ID );
 //char* error_string registers_set_register(  Registers *registers , Register *register_out , unsigned short REGISTER_ID )
-char* registers_set_register( Registers *registers , Register register_in , unsigned short REGISTER_ID )
+char* registers_set_register( Registers *registers , Register register_in , unsigned short REGISTER_ID );
 
 #endif

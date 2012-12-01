@@ -93,3 +93,106 @@
 1353125967 source:c:\users\lemtzas\dropbox\school\tcss371\project 3\psr.c
 	"psr.h"
 
+1351216392 source:c:\users\mojito\documents\github\tcss371_final_project\and_gate.c
+	<stdio.h>
+	"bit_def.h"
+
+1351219810 c:\users\mojito\documents\github\tcss371_final_project\bit_def.h
+
+1351216393 source:c:\users\mojito\documents\github\tcss371_final_project\bit_man.c
+	"bit_def.h"
+
+1351216393 source:c:\users\mojito\documents\github\tcss371_final_project\nand_gate.c
+	<stdio.h>
+	"bit_def.h"
+	"and_gate.h"
+	"not_gate.h"
+
+1351216393 c:\users\mojito\documents\github\tcss371_final_project\and_gate.h
+	"bit_def.h"
+
+1351216394 c:\users\mojito\documents\github\tcss371_final_project\not_gate.h
+	"bit_def.h"
+
+1351216393 source:c:\users\mojito\documents\github\tcss371_final_project\nor_gate.c
+	<stdio.h>
+	"bit_def.h"
+	"or_gate.h"
+	"not_gate.h"
+
+1351216394 c:\users\mojito\documents\github\tcss371_final_project\or_gate.h
+	"bit_def.h"
+
+1351216394 source:c:\users\mojito\documents\github\tcss371_final_project\not_gate.c
+	<stdio.h>
+	"bit_def.h"
+
+1351216394 source:c:\users\mojito\documents\github\tcss371_final_project\or_gate.c
+	<stdio.h>
+	"bit_def.h"
+
+1353040695 source:c:\users\mojito\documents\github\tcss371_final_project\rca.c
+	"rca.h"
+	"or_gate.h"
+	"xor_gate.h"
+	"and_gate.h"
+
+1353108468 c:\users\mojito\documents\github\tcss371_final_project\rca.h
+	"bit_def.h"
+	"register.h"
+
+1353126213 c:\users\mojito\documents\github\tcss371_final_project\register.h
+	"bit_def.h"
+
+1351216395 c:\users\mojito\documents\github\tcss371_final_project\xor_gate.h
+	"bit_def.h"
+
+1353111179 source:c:\users\mojito\documents\github\tcss371_final_project\register_set.c
+	"register_set.h"
+
+1353111038 c:\users\mojito\documents\github\tcss371_final_project\register_set.h
+	"register.h"
+
+1351216395 source:c:\users\mojito\documents\github\tcss371_final_project\xor_gate.c
+	<stdio.h>
+	"bit_def.h"
+
+1354351404 source:c:\users\mojito\documents\github\tcss371_final_project\cpu.c
+	"CPU.h"
+
+1354351392 c:\users\mojito\documents\github\tcss371_final_project\cpu.h
+	"memory.h"
+	"registers.h"
+
+1354350936 c:\users\mojito\documents\github\tcss371_final_project\memory.h
+	"register.h"
+
+1354351376 c:\users\mojito\documents\github\tcss371_final_project\registers.h
+	"register.h"
+
+1353127533 source:c:\users\mojito\documents\github\tcss371_final_project\alu.c
+	"alu.h"
+	"register.h"
+	"bit_def.h"
+	"and_gate.h"
+	"or_gate.h"
+	"not_gate.h"
+	"rca.h"
+	"psr.h"
+
+1353126314 c:\users\mojito\documents\github\tcss371_final_project\alu.h
+	"rca.h"
+	"register.h"
+	"psr.h"
+
+1353125990 c:\users\mojito\documents\github\tcss371_final_project\psr.h
+	"register.h"
+
+1354351304 source:c:\users\mojito\documents\github\tcss371_final_project\controller.c
+	"controller.h"
+
+1354351201 c:\users\mojito\documents\github\tcss371_final_project\controller.h
+	"registers.h"
+	"alu.h"
+	"memory.h"
+

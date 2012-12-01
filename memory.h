@@ -3,6 +3,10 @@
 
 #include "register.h"
 
+typedef struct {
+
+} Memory;
+
 char* memory_initialize( Memory *this );
 
 

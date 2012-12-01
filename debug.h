@@ -15,7 +15,7 @@ char* debug_monitor( Debug *this, CPU *cpu , Registers *registers , Memory *memo
 
 
 //char* error_string debug_do_step_ask( CPU &cpu , Registers &registers , Memory &memory , Boolean &result )
-char* debug_do_step_ask( Debug *this, CPU *cpu , Registers *registers, Memory *memory, Boolean *result );
+char* debug_do_step_ask( Debug *this, CPU *cpu , Registers *registers, Memory *memory, unsigned char *result );
 
 
 #endif

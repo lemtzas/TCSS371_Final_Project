@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+#include "lc-plus.h"
+
 //manual test and simulation driver for alu.c (PROJECT 3)
 int main()
 {

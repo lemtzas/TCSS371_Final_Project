@@ -1,6 +1,13 @@
 #ifndef LCPLUS_H
 #define LCPLUS_H
 
+#include "debug.h"
+#include "memory.h"
+#include "registers.h"
+#include "CPU.h"
+#include "controller.h"
+#include "alu.h"
+
 //nothing here...yet...
 
 
