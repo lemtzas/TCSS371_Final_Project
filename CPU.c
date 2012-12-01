@@ -10,5 +10,6 @@ char* cpu_initialize(CPU *this)
 //char* error_string cpu_run_step(CPU *cpu, Registers *registers, Memory *memory)
 char* cpu_run_step(CPU *this, Registers *registers, Memory *memory)
 {
-    return 0;
+    ///TODO: Is this correct?
+    controller_run_step(&this->controller, &this->alu, registers, memory);
 }

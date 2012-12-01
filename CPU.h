@@ -6,7 +6,8 @@
 
 ///CPU storage
 typedef struct {
-
+    Controller controller;
+    ALU alu;
 } CPU;
 
 //char* error_string cpu_run_step(CPU *cpu, Registers *registers, Memory *memory)
