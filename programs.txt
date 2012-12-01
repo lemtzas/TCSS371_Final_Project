@@ -46,12 +46,22 @@ location. From either of these jump (if necessary) to the HALT
 instruction. 
 
 PC:
-1	
-2	
-3	
-4	
-5	
-6	
+1	AND R1, R1, #0  ;initialize R1
+2	AND R2, R2, R1  ;initialize R2	
+3	ADD R1, R1, #6  ;set R1 to 6
+4	ADD R2, R2, #2  ;set R2 to 2	
+5	ST  R1, #24     ;set mem addr 30 to #6 (PC=6, +24=30)
+6	ST  R2, #24     ;set mem addr 31 to #2 (PC=7, +24=31)
+7	LD  R1, #23     ;load value from mem addr 31 into R1
+8	LD  R2, #21     ;load value from mem addr 30 into R2
+9	SUB R3, R1, R2  ;subtract R2 from R1 and store in R3 (switch for other branch)
+10	ST  R3, #21     ;set mem addr 32 to the value stored in R3
+
+
+
+
+
+
 
 Add two positive numbers that will force overflow (say 0x7FFF + 0x0005)
 and put the result in a memory location. Then branch on overflow to a
