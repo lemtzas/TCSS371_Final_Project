@@ -1,10 +1,5 @@
 #include "controller.h"
 
-
-typedef struct {
-
-} opcode_reader;
-
 char* controller_run_step(Controller *this, ALU *alu, Registers *registers, Memory *memory)
 {
     Register temp;
@@ -24,7 +19,7 @@ char* controller_run_step(Controller *this, ALU *alu, Registers *registers, Memo
     registers_set_register(registers,temp,REG_IR);
 
     ///DECODE
-
+    switch
 
     ///EVALUATE ADDRESS
 
