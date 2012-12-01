@@ -22,6 +22,9 @@ char* registers_get_register( Registers *this , Register *register_out , unsigne
     if(!register_out) return "registers_get_register: register_out cannot be null";
     if(!this) return "registers_get_register: this cannot be null";
     Register *reg = _registers_id_to_register_ptr(this,REGISTER_ID);
+    if(!reg) return "registers_set_register: REGISTER_ID out of bounds";
+
+    (*register_out) = (*reg);
 
     return 0;
 }
@@ -30,6 +33,11 @@ char* registers_get_register( Registers *this , Register *register_out , unsigne
 //char* error_string registers_set_register(  Registers *registers , Register *register_out , unsigned short REGISTER_ID )
 char* registers_set_register( Registers *this , Register register_in , unsigned short REGISTER_ID )
 {
+    if(!this) return "registers_set_register: this cannot be null";
+    Register *reg = _registers_id_to_register_ptr(this,REGISTER_ID);
+    if(!reg) return "registers_set_register: REGISTER_ID out of bounds";
+
+    (*reg) = register_in;
     return 0;
 }
 
@@ -64,6 +72,6 @@ Register* _registers_id_to_register_ptr(Registers *this, unsigned short REGISTER
             return &(this->psr);
             break;
         default: //OH GOD PANIC!
-            exit(5);
+            return 0;
     }
 }
