@@ -21,6 +21,8 @@ char* registers_get_register( Registers *this , Register *register_out , unsigne
 {
     if(!register_out) return "registers_get_register: register_out cannot be null";
     if(!this) return "registers_get_register: this cannot be null";
+    Register *reg = _registers_id_to_register_ptr(this,REGISTER_ID);
+
     return 0;
 }
 
@@ -31,6 +33,7 @@ char* registers_set_register( Registers *this , Register register_in , unsigned 
     return 0;
 }
 
+//internal function; returns a register reference depending on ID
 Register* _registers_id_to_register_ptr(Registers *this, unsigned short REGISTER_ID)
 {
     switch(REGISTER_ID)

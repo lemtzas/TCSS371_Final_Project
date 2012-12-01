@@ -2,6 +2,7 @@
 #define REGISTERS_H
 
 #include "register.h"
+#include "psr.h"
 
 #define REG_R0  0
 #define REG_R1  1
