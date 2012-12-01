@@ -18,21 +18,23 @@ PC:
 12	LDR R2, R4, #0  ;load value from mem addr 21 into R2
 13	ADD R3, R1, R2  ;add R1 and R2 and place result in R3
 14  ST  R3, #7      ;store value from R3 in mem addr 22
+15  HALT            ;end the program
 
-0101001001100000	
-0101010010000001	
-0101011011100000	
-0101100100100000	
-0001001001100110	
-0001010010100010	
-0001100100101011	
-0010001000001011	
-0111010100001010	
-0010001000001001	
-1110100000001001	
-0110010100000000	
-0001011001000010	
-0010011000000111	
+0101 0010 0110 0000		0x5260
+0101 0100 1000 0001		0x5481
+0101 0110 1110 0000		0x56E0
+0101 1001 0010 0000		0x5920
+0001 0010 0110 0110		0x1266
+0001 0100 1010 0010		0x14A2
+0001 1001 0010 1011		0x192B
+0010 0010 0000 1011		0x220B
+0111 0101 0000 1010		0x750A
+0010 0010 0000 1001		0x2209
+1110 1000 0000 1001		0xE809
+0110 0101 0000 0000		0x6500
+0001 0110 0100 0010		0x1642
+0010 0110 0000 0111		0x2607
+1000 0000 0000 0000		0x8000
 
 
 Subtract a positive value (as stored in memory) from a positive value
@@ -51,18 +53,44 @@ PC:
 5	
 6	
 
+Add two positive numbers that will force overflow (say 0x7FFF + 0x0005)
+and put the result in a memory location. Then branch on overflow to a
+part of the program that stores the source register 1 to a specified
+location and goto HALT. Otherwise store source register 2 to that
+location then goto HALT. Try this same program but using a smaller
+number such as 0x6FFF to make sure the correct branch is taken. 
 
+PC:
+1	
+2	
+3	
+4	
+5	
+6	
 
+Load a positive value into a register from memory and NOT it using a
+different destination register. Then branch on negative to a part of
+the program where you store the contents of the destination register
+to a memory location. After storing the negative value (say at a
+location labeled NEGVAL) do an absolute branch back to the position
+in the program immediately after the first branch (it needs a label).
+Do the exact opposite operation; NOT the original destination register
+and store it back in the original load register (e.g. say R2 was the
+original load register and your first NOT used R1 as destination, then
+the second time you would NOT R1 and store it back in R2). Branch on
+positive, this time, to a point in the program where you store a
+positive value, say at POSVAL. Then halt the program. Modify the value
+in memory so that it is negative and then since the branch is not taken
+(shouldn't be!) store the original load register to the same memory
+location. 
 
-
-
-
-
-
-
-
-
-
+PC:
+1	
+2	
+3	
+4	
+5	
+6	
 
 
 
