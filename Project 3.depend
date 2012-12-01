@@ -164,7 +164,7 @@
 	"memory.h"
 	"registers.h"
 
-1354350936 c:\users\mojito\documents\github\tcss371_final_project\memory.h
+1354352715 c:\users\mojito\documents\github\tcss371_final_project\memory.h
 	"register.h"
 
 1354351376 c:\users\mojito\documents\github\tcss371_final_project\registers.h
@@ -195,4 +195,41 @@
 	"registers.h"
 	"alu.h"
 	"memory.h"
+
+1354351428 source:c:\users\mojito\documents\github\tcss371_final_project\debug.c
+	"debug.h"
+
+1354351423 c:\users\mojito\documents\github\tcss371_final_project\debug.h
+	"memory.h"
+	"CPU.h"
+	"registers.h"
+
+1354348212 source:c:\users\mojito\documents\github\tcss371_final_project\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	"alu.h"
+
+1353125967 source:c:\users\mojito\documents\github\tcss371_final_project\psr.c
+	"psr.h"
+
+1353126150 source:c:\users\mojito\documents\github\tcss371_final_project\register.c
+	"register.h"
+
+1354350561 source:c:\users\mojito\documents\github\tcss371_final_project\registers.c
+	"registers.h"
+
+1354353061 source:c:\users\mojito\documents\github\tcss371_final_project\lc-plus.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	"lc-plus.h"
+
+1354351367 c:\users\mojito\documents\github\tcss371_final_project\lc-plus.h
+	"debug.h"
+	"memory.h"
+	"registers.h"
+	"CPU.h"
+	"controller.h"
+	"alu.h"
 

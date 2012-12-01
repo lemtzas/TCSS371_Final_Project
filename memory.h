@@ -3,8 +3,11 @@
 
 #include "register.h"
 
-typedef struct {
+#define LCPLUS_MEMORY_SIZE  0x1000
 
+
+typedef struct {
+    Register location[LCPLUS_MEMORY_SIZE];
 } Memory;
 
 char* memory_initialize( Memory *this );
