@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="CPU.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CPU.h" />
 		<Unit filename="alu.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -43,9 +47,25 @@
 		<Unit filename="bit_man.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="controller.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="controller.h" />
+		<Unit filename="debug.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="debug.h" />
+		<Unit filename="lc-plus.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lc-plus.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="memory.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="memory.h" />
 		<Unit filename="nand_gate.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -79,6 +99,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="register_set.h" />
+		<Unit filename="registers.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="registers.h" />
 		<Unit filename="xor_gate.c">
 			<Option compilerVar="CC" />
 		</Unit>

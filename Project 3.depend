@@ -191,10 +191,10 @@
 1353125990 c:\users\mojito\documents\github\tcss371_final_project\psr.h
 	"register.h"
 
-1354362723 source:c:\users\mojito\documents\github\tcss371_final_project\controller.c
+1354367679 source:c:\users\mojito\documents\github\tcss371_final_project\controller.c
 	"controller.h"
 
-1354363130 c:\users\mojito\documents\github\tcss371_final_project\controller.h
+1354366770 c:\users\mojito\documents\github\tcss371_final_project\controller.h
 	"register.h"
 	"registers.h"
 	"alu.h"
@@ -223,7 +223,7 @@
 1354356318 source:c:\users\mojito\documents\github\tcss371_final_project\registers.c
 	"registers.h"
 
-1354353061 source:c:\users\mojito\documents\github\tcss371_final_project\lc-plus.c
+1354366397 source:c:\users\mojito\documents\github\tcss371_final_project\lc-plus.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>

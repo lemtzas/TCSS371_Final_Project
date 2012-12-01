@@ -15,7 +15,7 @@ int temp_testing()
 
 
 //manual test and simulation driver for alu.c (PROJECT 3)
-int main()
+int main2()
 {
     ///TODO: LOAD FILE
     ///TODO: MAIN LOOP
