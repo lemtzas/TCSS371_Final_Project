@@ -157,10 +157,11 @@
 	<stdio.h>
 	"bit_def.h"
 
-1354351404 source:c:\users\mojito\documents\github\tcss371_final_project\cpu.c
+1354362192 source:c:\users\mojito\documents\github\tcss371_final_project\cpu.c
 	"CPU.h"
 
-1354351392 c:\users\mojito\documents\github\tcss371_final_project\cpu.h
+1354362670 c:\users\mojito\documents\github\tcss371_final_project\cpu.h
+	"controller.h"
 	"memory.h"
 	"registers.h"
 
@@ -193,7 +194,8 @@
 1354351304 source:c:\users\mojito\documents\github\tcss371_final_project\controller.c
 	"controller.h"
 
-1354351201 c:\users\mojito\documents\github\tcss371_final_project\controller.h
+1354362693 c:\users\mojito\documents\github\tcss371_final_project\controller.h
+	"register.h"
 	"registers.h"
 	"alu.h"
 	"memory.h"
@@ -218,7 +220,7 @@
 1353126150 source:c:\users\mojito\documents\github\tcss371_final_project\register.c
 	"register.h"
 
-1354350561 source:c:\users\mojito\documents\github\tcss371_final_project\registers.c
+1354356318 source:c:\users\mojito\documents\github\tcss371_final_project\registers.c
 	"registers.h"
 
 1354353061 source:c:\users\mojito\documents\github\tcss371_final_project\lc-plus.c

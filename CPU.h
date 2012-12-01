@@ -1,6 +1,7 @@
 #ifndef CPU_H
 #define CPU_H
 
+#include "controller.h"
 #include "memory.h"
 #include "registers.h"
 

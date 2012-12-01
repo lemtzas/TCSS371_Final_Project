@@ -19,7 +19,7 @@ char* controller_run_step(Controller *this, ALU *alu, Registers *registers, Memo
     registers_set_register(registers,temp,REG_IR);
 
     ///DECODE
-    switch
+
 
     ///EVALUATE ADDRESS
 
@@ -33,4 +33,6 @@ char* controller_run_step(Controller *this, ALU *alu, Registers *registers, Memo
     ///STORE RESULT
 
 
+
+    return 0;
 }
