@@ -1,0 +1,74 @@
+Write a program that loads two numbers from a memory location and adds
+them together, stores them in a third memory location.
+At the end of this program you should be able to see the answer in the
+destination register as well as the memory location. 
+
+PC:
+1	AND R1, R1, #0  ;initialize R1
+2	AND R2, R2, R1  ;initialize R2
+3	AND R3, R3, #0  ;initialize R3
+4	AND R4, R4, #0  ;initialize R4
+5	ADD R1, R1, #6  ;set R1 to 6
+6	ADD R2, R2, #2  ;set R2 to 2
+7	ADD R4, R4, #11 ;set R4 to 11
+8	ST  R1, #11     ;set mem addr 20 to #6 (PC=9, +11=20)
+9	STR R2, R4, #10 ;set mem addr 21 to #2 (R4=11, +10=21)
+10	LD  R1, #9      ;load value from mem addr 20 into R1
+11	LEA R4, #9      ;load #21 into R4
+12	LDR R2, R4, #0  ;load value from mem addr 21 into R2
+13	ADD R3, R1, R2  ;add R1 and R2 and place result in R3
+14  ST  R3, #7      ;store value from R3 in mem addr 22
+
+0101001001100000	
+0101010010000001	
+0101011011100000	
+0101100100100000	
+0001001001100110	
+0001010010100010	
+0001100100101011	
+0010001000001011	
+0111010100001010	
+0010001000001001	
+1110100000001001	
+0110010100000000	
+0001011001000010	
+0010011000000111	
+
+
+Subtract a positive value (as stored in memory) from a positive value
+(also in memory) and put the result back in another memory location.
+Branch to another location if the result was negative where you will
+store the contents of the source register 1 to a specific location in
+memory. Otherwise store the contents of source register 2 in that
+location. From either of these jump (if necessary) to the HALT
+instruction. 
+
+PC:
+1	
+2	
+3	
+4	
+5	
+6	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
