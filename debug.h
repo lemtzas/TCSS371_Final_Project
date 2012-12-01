@@ -11,11 +11,11 @@ typedef struct {
 
 
 //char* error_string debug_monitor( CPU &cpu , Registers &registers , Memory &memory )
-char* debug_monitor( Debug *debug, CPU *cpu , Registers *registers , Memory *memory );
+char* debug_monitor( Debug *this, CPU *cpu , Registers *registers , Memory *memory );
 
 
 //char* error_string debug_do_step_ask( CPU &cpu , Registers &registers , Memory &memory , Boolean &result )
-char* debug_do_step_ask( Debug *debug, CPU *cpu , Registers *registers, Memory *memory, Boolean *result );
+char* debug_do_step_ask( Debug *this, CPU *cpu , Registers *registers, Memory *memory, Boolean *result );
 
 
 #endif
