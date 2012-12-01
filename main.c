@@ -3,8 +3,8 @@
 #include <stdbool.h>
 #include "alu.h"
 
-//manual test and simulation driver for alu.c
-int main()
+//manual test and simulation driver for alu.c (PROJECT 3)
+int p3main()
 {
     int reg_init_count = 0;
     int i;
