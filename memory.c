@@ -1,5 +1,12 @@
 #include "memory.h"
 
+
+char* memory_initialize( Memory *this )
+{
+
+}
+
+
 //char* error_string memory_get_location( Memory *memory , Register *data_out , unsigned short address)
 char* memory_get_location( Memory *this, Register *data_out , unsigned short address)
 {
