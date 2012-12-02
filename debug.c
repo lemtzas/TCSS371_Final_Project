@@ -12,43 +12,36 @@ char* debug_monitor( Debug *this, CPU *cpu , Registers *registers , Memory *memo
 
 	//IR
 	registers_get_register(registers,&register_ptr,REG_IR);
-	register_get_register(register_ptr,&value_ptr); //not sure what this is
-	printf("IR: %04x\t");
+	printf("IR: %04x\t",register_ptr);   ///this needs a value to print
 
 	//PC
-	registers_get_register(registers,register_ptr,REG_PC);
-	register_get(register_ptr,value_ptr);
-	printf("PC: %04x\n");
+	registers_get_register(registers,&register_ptr,REG_PC);
+	printf("PC: %04x\n",register_ptr);   ///this needs a value to print
 	// get the 8 general purpose registers
 	int i;
-	Register * register_ptr;
-	unsigned short value;
-	unsigned short * value_ptr = &value;
 	printf("General Purpose Registers:\n");
 	for(i=0;i<8;i++) {
-		registers_get_register(registers,register_ptr,i);
-		register_get(register_ptr,value_ptr);
-		printf("R%d: %04x\n",i,value);
+		registers_get_register(registers,&register_ptr,i);
+		printf("R%d: %04x\n",i,register_ptr);
 	}
 
 	//MAR
-	registers_get_register(registers,register_ptr,REG_MAR);
-	register_get(register_ptr,value_ptr);
-	printf("MAR: %04x\t");
+	registers_get_register(registers,&register_ptr,REG_MAR);
+	printf("MAR: %04x\t",register_ptr);   ///this needs a value to print
 
 	//MDR
-	registers_get_register(registers,register_ptr,REG_MDR);
-	register_get(register_ptr,value_ptr);
-	printf("MDR: %04x\n");
+	registers_get_register(registers,&register_ptr,REG_MDR);
+	printf("MDR: %04x\n",register_ptr);   ///this needs a value to print
 
 	//PSR
-	registers_get_register(registers,register_ptr,REG_PSR);
+	PSR psr;
+	registers_get_register(registers,&psr,REG_PSR);
 	Bit n;
 	Bit z;
 	Bit c;
 	Bit o;
 	Bit p;
-	PSR_get_nzco(register_ptr,&n,&z,&c,&o);
+	PSR_get_nzco(&psr,&n,&z,&c,&o);
 	p = not(or(n,z));
 	printf("PSR: n:%d z:%d p:%d c:%d o:%d\n",n,z,p,c,o);
 
@@ -56,11 +49,27 @@ char* debug_monitor( Debug *this, CPU *cpu , Registers *registers , Memory *memo
 }
 
 //steps, and asks if the user wishes to see input or quit
-char* debug_do_step_ask( Debug *this, CPU *cpu , Registers *registers, Memory *memory, unsigned char *result )
+char* debug_do_step_ask( Debug *this, CPU *cpu , Registers *registers, Memory *memory, int *result )
 {
 	char* error;
 	error = cpu_run_step(cpu, registers, memory);
-	printf("1: Step and view debug\n2: Step without viewing debug\nQuit:0");
-	scanf("%d",result);
+	printf("1: Step and view debug\n2: Step without viewing debug\n0: Quit\n");
+
+	int res = 0;
+	unsigned char retry = 0;
+    do
+    {
+        retry = 0;
+        printf("Which? ");
+        res = scanf("%d", result);
+        if(res == 0) {
+            //printf("\t\tInvalid input!\n");
+            while (getchar() != '\n'); //remove offending characters
+            retry = 1;
+        } else if(*1result < 0 || *result > 2) {
+            //printf("\t\tOut of bounds!\n");
+            retry = 1;
+        }
+    } while( retry );
     return error;
 }
