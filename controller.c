@@ -19,9 +19,9 @@ char* controller_run_step(Controller *this, ALU *alu, Registers *registers, Memo
     Bit c,o,n,z,p;
     registers_get_register(registers,&psr,REG_PSR);
     PSR_get_c(&psr,&c);
-    PSR_get_o(&psr,&c);
-    PSR_get_n(&psr,&c);
-    PSR_get_z(&psr,&c);
+    PSR_get_o(&psr,&o);
+    PSR_get_n(&psr,&n);
+    PSR_get_z(&psr,&z);
     p = not(or(n,z)); // p = !(n || p)
 
     ///FETCH
