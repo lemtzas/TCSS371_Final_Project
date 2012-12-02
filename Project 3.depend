@@ -226,7 +226,7 @@
 1354356318 source:c:\users\mojito\documents\github\tcss371_final_project\registers.c
 	"registers.h"
 
-1354490571 source:c:\users\mojito\documents\github\tcss371_final_project\lc-plus.c
+1354490795 source:c:\users\mojito\documents\github\tcss371_final_project\lc-plus.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
@@ -248,4 +248,7 @@
 	<stdio.h>
 	<stdlib.h>
 	"memory.h"
+
+1354491623 source:c:\users\mojito\documents\github\tcss371_final_project\read_file.c
+	"read_file.h"
 
