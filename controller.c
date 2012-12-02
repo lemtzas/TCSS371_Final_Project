@@ -19,44 +19,56 @@ char* controller_run_step(Controller *this, ALU *alu, Registers *registers, Memo
     registers_set_register(registers,temp,REG_IR);
 
     ///DECODE
-    //may be filled depending on opcode
-    Register dr;
-    Register sr1;
-    Register sr2;
-    switch(((_DATAMASK_OPCODE*)(&temp))->code) //switch on IR OPCODE
+    Register opcode = ((_DATAMASK_OPCODE*)(&temp))->code;
+
+    ///EVALUATE ADDRESS
+    Register addr;
+    switch(opcode) //switch on IR OPCODE
     {
-        case OPCODE_ADD:
-        case OPCODE_AND:
-        case OPCODE_SUB:
-        {
-            _DATAMASK_ADD_REGS *mask = ((_DATAMASK_ADD_REGS*)(&temp));
-            _DATAMASK_ADD_IMM5 *mask2 = ((_DATAMASK_ADD_IMM5*)(&temp));
-            dr = mask->dr;
-            sr1 = mask->sr1;
-            if(mask2->one) sr2 = _controller_util_sext(mask2->imm5,5); //IMM OR NOT
-            else sr2 = mask->sr2;
-        }
-            break;
-        case OPCODE_NOT:
-        {
-            _DATAMASK_NOT *mask = ((_DATAMASK_NOT*)(&temp));
-            dr = mask->dr;
-            sr1 = mask->sr1;
-        }
-            break;
-        case OPCODE_BR:
-        case OPCODE_JMP:
-            break;
-        case OPCODE_LD:
         case OPCODE_LDR:
-        case OPCODE_LEA:
-            break;
-        case OPCODE_ST:
-        case OPCODE_STR:
-            break;
-        case OPCODE_HALT:
+            addr = ((_DATAMASK_LDR*)(&temp))->baser + _controller_util_sext(((_DATAMASK_LDR*)(&temp))->pcoffset6,6);
             break;
     }
+
+    //may be filled depending on opcode
+//    Register dr;
+//    Register sr1;
+//    Register sr2;
+//    switch(opcode) //switch on IR OPCODE
+//    {
+//        case OPCODE_ADD:
+//        case OPCODE_AND:
+//        case OPCODE_SUB:
+//        {
+//            _DATAMASK_ADD_REGS *mask = ((_DATAMASK_ADD_REGS*)(&temp));
+//            _DATAMASK_ADD_IMM5 *mask2 = ((_DATAMASK_ADD_IMM5*)(&temp));
+//            //store operands
+//            dr = mask->dr;
+//            sr1 = mask->sr1;
+//            if(mask2->one) sr2 = _controller_util_sext(mask2->imm5,5); //IMM OR NOT
+//            else sr2 = mask->sr2;
+//        }
+//            break;
+//        case OPCODE_NOT:
+//        {
+//            _DATAMASK_NOT *mask = ((_DATAMASK_NOT*)(&temp));
+//            dr = mask->dr;
+//            sr1 = mask->sr1;
+//        }
+//            break;
+//        case OPCODE_BR:
+//        case OPCODE_JMP:
+//            break;
+//        case OPCODE_LD:
+//        case OPCODE_LDR:
+//        case OPCODE_LEA:
+//            break;
+//        case OPCODE_ST:
+//        case OPCODE_STR:
+//            break;
+//        case OPCODE_HALT:
+//            break;
+//    }
 
     ///EVALUATE ADDRESS
 

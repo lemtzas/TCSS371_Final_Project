@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="CPU.c" open="1" top="0" tabpos="6">
+	<File name="CPU.c" open="1" top="0" tabpos="4">
 		<Cursor position="54" topLine="0" />
 	</File>
-	<File name="CPU.h" open="1" top="0" tabpos="5">
+	<File name="CPU.h" open="1" top="0" tabpos="3">
 		<Cursor position="54" topLine="0" />
 	</File>
-	<File name="alu.c" open="1" top="0" tabpos="3">
+	<File name="alu.c" open="1" top="0" tabpos="2">
 		<Cursor position="20" topLine="12" />
 	</File>
 	<File name="alu.h" open="1" top="0" tabpos="2">
 		<Cursor position="91" topLine="0" />
 	</File>
-	<File name="controller.c" open="1" top="1" tabpos="7">
-		<Cursor position="2016" topLine="49" />
+	<File name="controller.c" open="1" top="1" tabpos="5">
+		<Cursor position="1103" topLine="0" />
 	</File>
-	<File name="controller.h" open="1" top="0" tabpos="8">
+	<File name="controller.h" open="1" top="0" tabpos="6">
 		<Cursor position="478" topLine="0" />
 	</File>
 	<File name="debug.c" open="0" top="0" tabpos="0">
@@ -25,7 +25,7 @@
 	<File name="debug.h" open="0" top="0" tabpos="0">
 		<Cursor position="315" topLine="0" />
 	</File>
-	<File name="lc-plus.c" open="1" top="0" tabpos="4">
+	<File name="lc-plus.c" open="1" top="0" tabpos="2">
 		<Cursor position="246" topLine="0" />
 	</File>
 	<File name="lc-plus.h" open="0" top="0" tabpos="0">
