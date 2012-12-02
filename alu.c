@@ -41,7 +41,7 @@ char* ALU_operation_add(ALU* this,PSR* psr)
     Bit z = (flags>>2)&0b1;
     Bit c = (flags>>1)&0b1;
     Bit o = (flags)&0b1;
-    //set them if we were given an psr
+    //set them if we were given a psr
     if(psr) PSR_set_nzco(psr,n,z,c,o);
 
     return 0; //no errors?

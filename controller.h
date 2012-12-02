@@ -25,7 +25,7 @@
 #define OPCODE_HALT 0b1000
 
 typedef struct {
-
+    Bit halt;
 } Controller;
 
 //char* error_string alu_run_step(Controller *controller, ALU *alu, Registers *registers, Memory *memory)
@@ -33,6 +33,8 @@ char* controller_run_step(Controller *this, ALU *alu, Registers *registers, Memo
 
 //sign extends something of length /bits/ to the length of a full register
 Register _controller_util_sext(Register in, unsigned short bits);
+//sets the PSR as appropriate
+void _controller_util_setcc(Controller *this,PSR *psr,Register value);
 
 ///OPCODE
 typedef struct {

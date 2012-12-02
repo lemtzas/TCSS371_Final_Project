@@ -173,7 +173,7 @@
 	"register.h"
 	"psr.h"
 
-1353127533 source:c:\users\mojito\documents\github\tcss371_final_project\alu.c
+1354469897 source:c:\users\mojito\documents\github\tcss371_final_project\alu.c
 	"alu.h"
 	"register.h"
 	"bit_def.h"
@@ -194,7 +194,7 @@
 1354367679 source:c:\users\mojito\documents\github\tcss371_final_project\controller.c
 	"controller.h"
 
-1354409824 c:\users\mojito\documents\github\tcss371_final_project\controller.h
+1354469842 c:\users\mojito\documents\github\tcss371_final_project\controller.h
 	"register.h"
 	"registers.h"
 	"alu.h"
