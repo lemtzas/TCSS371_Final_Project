@@ -47,7 +47,7 @@ int _main_lc_plus_loop()
     return 0;
 }
 
-int main()
-{
-    return _main_lc_plus_loop();
-}
+//int main()
+//{
+//    return _main_lc_plus_loop();
+//}
