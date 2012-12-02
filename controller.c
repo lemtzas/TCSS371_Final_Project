@@ -3,30 +3,52 @@
 char* controller_run_step(Controller *this, ALU *alu, Registers *registers, Memory *memory)
 {
     Register temp;
+    Register ir;
+    Register pc;
     ///FETCH
     //MAR <- PC
-    registers_get_register(registers,&temp,REG_PC);
-    registers_set_register(registers,temp,REG_MAR);
+    registers_get_register(registers,&pc,REG_PC);
+    registers_set_register(registers,pc,REG_MAR);
 
     //PC <- PC + 1
-    registers_set_register(registers,++temp,REG_PC);
+    registers_set_register(registers,++pc,REG_PC);
 
     //LOAD MEMORY
     memory_get(memory,registers);
 
     //IR <- MDR
-    registers_get_register(registers,&temp,REG_MDR);
-    registers_set_register(registers,temp,REG_IR);
+    registers_get_register(registers,&ir,REG_MDR);
+    registers_set_register(registers,ir,REG_IR);
 
     ///DECODE
-    Register opcode = ((_DATAMASK_OPCODE*)(&temp))->code;
+    Register opcode = ((_DATAMASK_OPCODE*)(&ir))->code;
 
     ///EVALUATE ADDRESS
     Register addr;
     switch(opcode) //switch on IR OPCODE
     {
+        case OPCODE_ST:
+            addr = pc + _controller_util_sext(((_DATAMASK_ST*)(&ir))->pcoffset9,9);
+            break;
+        case OPCODE_STR:
+            registers_get_register(registers,&temp,((_DATAMASK_STR*)(&ir))->baser);
+            addr = temp + _controller_util_sext(((_DATAMASK_STR*)(&ir))->pcoffset6,6);
+            break;
+        case OPCODE_LD:
+            addr = pc + _controller_util_sext(((_DATAMASK_LD*)(&ir))->pcoffset9,9);
+            break;
         case OPCODE_LDR:
-            addr = ((_DATAMASK_LDR*)(&temp))->baser + _controller_util_sext(((_DATAMASK_LDR*)(&temp))->pcoffset6,6);
+            registers_get_register(registers,&temp,((_DATAMASK_LDR*)(&ir))->baser);
+            addr = temp + _controller_util_sext(((_DATAMASK_LDR*)(&ir))->pcoffset6,6);
+            break;
+        case OPCODE_LEA:
+            addr = pc + _controller_util_sext(((_DATAMASK_LEA*)(&ir))->pcoffset9,9);
+            break;
+        case OPCODE_BR:
+            addr = pc + _controller_util_sext(((_DATAMASK_BR*)(&ir))->pcoffset7,7);
+            break;
+        case OPCODE_JMP:
+            registers_get_register(registers,&addr,((_DATAMASK_JMP*)(&ir))->baser);
             break;
     }
 
@@ -40,8 +62,8 @@ char* controller_run_step(Controller *this, ALU *alu, Registers *registers, Memo
 //        case OPCODE_AND:
 //        case OPCODE_SUB:
 //        {
-//            _DATAMASK_ADD_REGS *mask = ((_DATAMASK_ADD_REGS*)(&temp));
-//            _DATAMASK_ADD_IMM5 *mask2 = ((_DATAMASK_ADD_IMM5*)(&temp));
+//            _DATAMASK_ADD_REGS *mask = ((_DATAMASK_ADD_REGS*)(&ir));
+//            _DATAMASK_ADD_IMM5 *mask2 = ((_DATAMASK_ADD_IMM5*)(&ir));
 //            //store operands
 //            dr = mask->dr;
 //            sr1 = mask->sr1;
@@ -51,7 +73,7 @@ char* controller_run_step(Controller *this, ALU *alu, Registers *registers, Memo
 //            break;
 //        case OPCODE_NOT:
 //        {
-//            _DATAMASK_NOT *mask = ((_DATAMASK_NOT*)(&temp));
+//            _DATAMASK_NOT *mask = ((_DATAMASK_NOT*)(&ir));
 //            dr = mask->dr;
 //            sr1 = mask->sr1;
 //        }
@@ -69,9 +91,6 @@ char* controller_run_step(Controller *this, ALU *alu, Registers *registers, Memo
 //        case OPCODE_HALT:
 //            break;
 //    }
-
-    ///EVALUATE ADDRESS
-
 
     ///FETCH OPERANDS
 
