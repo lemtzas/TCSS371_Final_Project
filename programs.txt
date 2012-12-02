@@ -4,37 +4,37 @@ At the end of this program you should be able to see the answer in the
 destination register as well as the memory location. 
 
 PC:
-1	AND R1, R1, #0  ;initialize R1
-2	AND R2, R2, R1  ;initialize R2
-3	AND R3, R3, #0  ;initialize R3
-4	AND R4, R4, #0  ;initialize R4
-5	ADD R1, R1, #6  ;set R1 to 6
-6	ADD R2, R2, #2  ;set R2 to 2
-7	ADD R4, R4, #11 ;set R4 to 11
-8	ST  R1, #11     ;set mem addr 20 to #6 (PC=9, +11=20)
-9	STR R2, R4, #10 ;set mem addr 21 to #2 (R4=11, +10=21)
-10	LD  R1, #9      ;load value from mem addr 20 into R1
-11	LEA R4, #9      ;load #21 into R4
-12	LDR R2, R4, #0  ;load value from mem addr 21 into R2
-13	ADD R3, R1, R2  ;add R1 and R2 and place result in R3
-14  ST  R3, #7      ;store value from R3 in mem addr 22
-15  HALT            ;end the program
+0	AND R1, R1, #0  ;initialize R1
+1	AND R2, R2, R1  ;initialize R2
+2	AND R3, R3, #0  ;initialize R3
+3	AND R4, R4, #0  ;initialize R4
+4	ADD R1, R1, #6  ;set R1 to 6
+5	ADD R2, R2, #2  ;set R2 to 2
+6	ADD R4, R4, #11 ;set R4 to 11
+7	ST  R1, #12     ;set mem addr 20 to #6 (PC=8, +12=20)
+8	STR R2, R4, #10 ;set mem addr 21 to #2 (R4=11, +10=21)
+9	LD  R1, #10     ;load value from mem addr 20 into R1
+10	LEA R4, #10     ;load #21 into R4
+11	LDR R2, R4, #0  ;load value from mem addr 21 into R2
+12	ADD R3, R1, R2  ;add R1 and R2 and place result in R3
+13  ST  R3, #8      ;store value from R3 in mem addr 22
+14  HALT            ;end the program
 
-1	0101 0010 0110 0000		0x5260
-2	0101 0100 1000 0001		0x5481
-3	0101 0110 1110 0000		0x56E0
-4	0101 1001 0010 0000		0x5920
-5	0001 0010 0110 0110		0x1266
-6	0001 0100 1010 0010		0x14A2
-7	0001 1001 0010 1011		0x192B
-8	0011 0010 0000 1011		0x320B
-9	0111 0101 0000 1010		0x750A
-10	0010 0010 0000 1001		0x2209
-11	1110 1000 0000 1001		0xE809
-12	0110 0101 0000 0000		0x6500
-13	0001 0110 0100 0010		0x1642
-14	0011 0110 0000 0111		0x3607
-15	1000 0000 0000 0000		0x8000
+0	0101 0010 0110 0000		0x5260
+1	0101 0100 1000 0001		0x5481
+2	0101 0110 1110 0000		0x56E0
+3	0101 1001 0010 0000		0x5920
+4	0001 0010 0110 0110		0x1266
+5	0001 0100 1010 0010		0x14A2
+6	0011 0010 0000 1100		0x320C
+7	0011 0010 0000 1011		0x320B
+8	0010 0010 0000 1010		0x220A
+9	1110 1000 0000 1010		0xE80A
+10	1110 1000 0000 1001		0xE809
+11	0110 0101 0000 0000		0x6500
+12	0011 0110 0000 1000		0x3608
+13	0011 0110 0000 0111		0x3607
+14	1000 0000 0000 0000		0x8000
 
 
 Subtract a positive value (as stored in memory) from a positive value
@@ -46,47 +46,47 @@ location. From either of these jump (if necessary) to the HALT
 instruction. 
 
 PC:
-1	AND R1, R1, #0  ;initialize R1
-2	AND R2, R2, R1  ;initialize R2	
-3	ADD R1, R1, #6  ;set R1 to 6
-4	ADD R2, R2, #2  ;set R2 to 2	
-5	ST  R1, #24     ;set mem addr 30 to #6 (PC=6, +24=30)
-6	ST  R2, #24     ;set mem addr 31 to #2 (PC=7, +24=31)
-7	LD  R1, #23     ;load value from mem addr 31 into R1
-8	LD  R2, #21     ;load value from mem addr 30 into R2
-9	SUB R3, R1, R2  ;subtract R2 from R1 and store in R3 (switch for other branch)
-10	ST  R3, #21     ;set mem addr 32 to the value stored in R3
-11  AND R3, R3, #0  ;initialize R3
-12  LEA R3, #20     ;load #33 into R3
-13	BRn #4          ;load #19 into the PC if condition negative
-14	STR R2, R3, #0  ;set mem addr 33 to the value stored in R2
-15	AND R4, R4, #0  ;initialize R4
-16	ADD R4, R4, #10 ;set R4 to 10
-17	ADD R4, R4, R4  ;double the value in R4
-18	JMP R4          ;jump to 20 (load 20 into the PC)
-19	STR R1, R3, #0  ;set mem addr 33 to the value stored in R2
-20	HALT
+0	AND R1, R1, #0  ;initialize R1
+1	AND R2, R2, R1  ;initialize R2	
+2	ADD R1, R1, #6  ;set R1 to 6
+3	ADD R2, R2, #2  ;set R2 to 2	
+4	ST  R1, #25     ;set mem addr 30 to #6 (PC=5, +25=30)
+5	ST  R2, #25     ;set mem addr 31 to #2 (PC=6, +25=31)
+6	LD  R1, #24     ;load value from mem addr 31 into R1
+7	LD  R2, #22     ;load value from mem addr 30 into R2
+8	SUB R3, R1, R2  ;subtract R2 from R1 and store in R3 (switch for other branch)
+9	ST  R3, #22     ;set mem addr 32 to the value stored in R3
+10  AND R3, R3, #0  ;initialize R3
+11  LEA R3, #21     ;load #33 into R3
+12	BRn #5          ;load #18 into the PC if condition negative
+13	STR R2, R3, #0  ;set mem addr 33 to the value stored in R2
+14	AND R4, R4, #0  ;initialize R4
+15	ADD R4, R4, #10 ;set R4 to 10
+16	ADD R4, R4, R4  ;double the value in R4
+17	JMP R4          ;jump to 20 (load 20 into the PC)
+18	STR R1, R3, #0  ;set mem addr 33 to the value stored in R2
+19	HALT
 
-1	0101 0010 0110 0000		0x5260
-2	0101 0100 1000 0001		0x5481
-3	0001 0010 0110 0110		0x1266
-4	0001 0100 1010 0010		0x14A2
-5	0011 0010 0001 1000		0x3218
-6	0011 0100 0001 1000		0x3418
-7	0010 0010 0001 0111		0x2217
-8	0010 0100 0001 0101		0x2415
-9	1101 0110 0100 0010		0xD642	or	1101 0110 1000 0001		0xD681
-10	0011 0110 0001 0101		0x3615
-11	0101 0110 1110 0000		0x56E0
-12	1110 0110 0001 0100		0xE614
-13	0000 0001 0000 0100		0x0104
-14	0111 0100 1100 0000		0x74C0
-15	0101 1001 0010 0000		0x5920
-16	0001 1001 0010 0110		0x1926
-17	0001 1001 0000 0100		0x1904
-18	1100 0001 0000 0000		0xC100
-19	0111 0010 1100 0000		0x72C0
-20	1000 0000 0000 0000		0x8000
+0	0101 0010 0110 0000		0x5260
+1	0101 0100 1000 0001		0x5481
+2	0001 0010 0110 0110		0x1266
+3	0001 0100 1010 0010		0x14A2
+4	0011 0010 0001 1001		0x3219
+5	0011 0100 0001 1001		0x3419
+6	0010 0010 0001 1000		0x2218
+7	0010 0100 0001 0110		0x2416
+8	1101 0110 0100 0010		0xD642	or	1101 0110 1000 0001		0xD681
+9	0011 0110 0001 0110		0x3616
+10	0101 0110 1110 0000		0x56E0
+11	1110 0110 0001 0101		0xE615
+12	0000 0001 0000 0101		0x0105
+13	0111 0100 1100 0000		0x74C0
+14	0101 1001 0010 0000		0x5920
+15	0001 1001 0010 0110		0x1926
+16	0001 1001 0000 0100		0x1904
+17	1100 0001 0000 0000		0xC100
+18	0111 0010 1100 0000		0x72C0
+19	1000 0000 0000 0000		0x8000
 
 
 
