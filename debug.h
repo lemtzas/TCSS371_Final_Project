@@ -4,6 +4,7 @@
 #include "memory.h"
 #include "CPU.h"
 #include "registers.h"
+#include "bit_def.h"
 
 #define STOPDEBUG 0
 #define VIEWDEBUG 1
