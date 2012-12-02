@@ -52,51 +52,57 @@ char* controller_run_step(Controller *this, ALU *alu, Registers *registers, Memo
             break;
     }
 
-    //may be filled depending on opcode
-//    Register dr;
-//    Register sr1;
-//    Register sr2;
-//    switch(opcode) //switch on IR OPCODE
-//    {
-//        case OPCODE_ADD:
-//        case OPCODE_AND:
-//        case OPCODE_SUB:
-//        {
-//            _DATAMASK_ADD_REGS *mask = ((_DATAMASK_ADD_REGS*)(&ir));
-//            _DATAMASK_ADD_IMM5 *mask2 = ((_DATAMASK_ADD_IMM5*)(&ir));
-//            //store operands
-//            dr = mask->dr;
-//            sr1 = mask->sr1;
-//            if(mask2->one) sr2 = _controller_util_sext(mask2->imm5,5); //IMM OR NOT
-//            else sr2 = mask->sr2;
-//        }
-//            break;
-//        case OPCODE_NOT:
-//        {
-//            _DATAMASK_NOT *mask = ((_DATAMASK_NOT*)(&ir));
-//            dr = mask->dr;
-//            sr1 = mask->sr1;
-//        }
-//            break;
-//        case OPCODE_BR:
-//        case OPCODE_JMP:
-//            break;
-//        case OPCODE_LD:
-//        case OPCODE_LDR:
-//        case OPCODE_LEA:
-//            break;
-//        case OPCODE_ST:
-//        case OPCODE_STR:
-//            break;
-//        case OPCODE_HALT:
-//            break;
-//    }
 
     ///FETCH OPERANDS
-
+    Register op1;
+    Register op2;
+    switch(opcode) //switch on IR OPCODE
+    {
+        case OPCODE_ADD:
+        case OPCODE_AND:
+        case OPCODE_SUB: //sext and add op2 if imm, simply load op2 if not
+            if(((_DATAMASK_ADD_IMM5*)(&ir))->one)   op2 = _controller_util_sext(((_DATAMASK_ADD_IMM5*)(&ir))->imm5,5);
+            else                                    registers_get_register(registers,&op2,((_DATAMASK_ADD_REGS*)(&ir))->sr2);
+        case OPCODE_NOT: //load op1 for all above as well as this
+            registers_get_register(registers,&op1,((_DATAMASK_ADD_REGS*)(&ir))->sr1);
+            break;
+        case OPCODE_ST:
+        case OPCODE_STR:
+            //I do not believe these have a FETCH phase
+            break;
+        case OPCODE_LD:
+        case OPCODE_LDR:
+            registers_set_register(registers,addr,REG_MAR);
+            memory_get(memory,registers);
+            registers_get_register(registers,&op1,REG_MDR);
+            break;
+        case OPCODE_LEA:
+            //I do not believe this has a FETCH phase
+            break;
+        case OPCODE_BR:
+            registers_get_register(registers,&op1,REG_PSR); //load the PSR to be later casted
+            break;
+        case OPCODE_JMP:
+            //I do not believe this has a FETCH phase
+            break;
+    }
 
     ///EXECUTE
-
+    switch(opcode) //switch on IR OPCODE
+    {
+        case OPCODE_ADD:
+        case OPCODE_AND:
+        case OPCODE_SUB:
+        case OPCODE_NOT:
+        case OPCODE_ST:
+        case OPCODE_STR:
+        case OPCODE_LD:
+        case OPCODE_LDR:
+        case OPCODE_LEA:
+        case OPCODE_BR:
+        case OPCODE_JMP:
+            break;
+    }
 
     ///STORE RESULT
 
