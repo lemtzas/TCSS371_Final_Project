@@ -5,6 +5,11 @@
 #include "CPU.h"
 #include "registers.h"
 
+#define STOPDEBUG 0
+#define VIEWDEBUG 1
+#define CONTINUE 2
+
+
 ///Debug storage
 typedef struct {
 } Debug;
