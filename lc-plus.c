@@ -4,7 +4,7 @@
 
 #include "lc-plus.h"
 
-int temp_testing()
+int _main_temp_testing()
 {
     Memory memory;
     memory_initialize(&memory);
@@ -22,7 +22,7 @@ void _main_error(error)
 }
 
 //manual test and simulation driver for alu.c (PROJECT 3)
-int main()
+int _main_lc_plus_loop()
 {
     char* error = 0;
     Memory memory;
@@ -44,4 +44,9 @@ int main()
         _main_error( debug_do_step_ask( &debug, &cpu , &registers , &memory ,&user_wants_to_continue) );
     }
     return 0;
+}
+
+int main()
+{
+    return _main_lc_plus_loop();
 }
