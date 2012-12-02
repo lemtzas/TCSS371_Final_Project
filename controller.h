@@ -29,6 +29,9 @@ typedef struct {
 } Controller;
 
 //char* error_string alu_run_step(Controller *controller, ALU *alu, Registers *registers, Memory *memory)
+char* controller_initialize(Controller *this);
+
+//char* error_string alu_run_step(Controller *controller, ALU *alu, Registers *registers, Memory *memory)
 char* controller_run_step(Controller *this, ALU *alu, Registers *registers, Memory *memory);
 
 //sign extends something of length /bits/ to the length of a full register

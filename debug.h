@@ -9,6 +9,8 @@
 typedef struct {
 } Debug;
 
+//initializes the debug structure
+char* debug_initialize( Debug *this );
 
 //char* error_string debug_monitor( CPU &cpu , Registers &registers , Memory &memory )
 char* debug_monitor( Debug *this, CPU *cpu , Registers *registers , Memory *memory );

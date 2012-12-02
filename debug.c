@@ -1,5 +1,9 @@
 #include "debug.h"
 
+char* debug_initialize( Debug *this )
+{
+    return 0;
+}
 
 char* debug_monitor( Debug *this, CPU *cpu , Registers *registers , Memory *memory )
 {

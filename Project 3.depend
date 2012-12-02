@@ -191,19 +191,19 @@
 1353125990 c:\users\mojito\documents\github\tcss371_final_project\psr.h
 	"register.h"
 
-1354367679 source:c:\users\mojito\documents\github\tcss371_final_project\controller.c
+1354471855 source:c:\users\mojito\documents\github\tcss371_final_project\controller.c
 	"controller.h"
 
-1354469842 c:\users\mojito\documents\github\tcss371_final_project\controller.h
+1354471211 c:\users\mojito\documents\github\tcss371_final_project\controller.h
 	"register.h"
 	"registers.h"
 	"alu.h"
 	"memory.h"
 
-1354351428 source:c:\users\mojito\documents\github\tcss371_final_project\debug.c
+1354471442 source:c:\users\mojito\documents\github\tcss371_final_project\debug.c
 	"debug.h"
 
-1354351423 c:\users\mojito\documents\github\tcss371_final_project\debug.h
+1354471430 c:\users\mojito\documents\github\tcss371_final_project\debug.h
 	"memory.h"
 	"CPU.h"
 	"registers.h"
@@ -223,7 +223,7 @@
 1354356318 source:c:\users\mojito\documents\github\tcss371_final_project\registers.c
 	"registers.h"
 
-1354368630 source:c:\users\mojito\documents\github\tcss371_final_project\lc-plus.c
+1354471878 source:c:\users\mojito\documents\github\tcss371_final_project\lc-plus.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>

@@ -12,12 +12,36 @@ int temp_testing()
 
 
 
-
+void _main_error(error)
+{
+    if(error)
+    {
+        printf("ERROR: %s", error);
+        exit(-1);
+    }
+}
 
 //manual test and simulation driver for alu.c (PROJECT 3)
-int main2()
+int main()
 {
-    ///TODO: LOAD FILE
-    ///TODO: MAIN LOOP
-    return temp_testing();
+    char* error = 0;
+    Memory memory;
+    Registers registers;
+    CPU cpu;
+    Debug debug;
+
+    _main_error( memory_initialize(&memory) );
+    _main_error( registers_initialize(&registers) );
+    _main_error( cpu_initialize(&cpu) );
+    _main_error( debug_initialize(&debug) );
+
+    //the main loop
+    unsigned char user_wants_to_continue = 0;
+    _main_error( debug_do_step_ask( &debug, &cpu , &registers , &memory ,&user_wants_to_continue) );
+    while(user_wants_to_continue) {
+        _main_error( cpu_run_step(&cpu, &memory, &registers) );
+        _main_error( debug_monitor( &debug, &cpu , &registers , &memory) );
+        _main_error( debug_do_step_ask( &debug, &cpu , &registers , &memory ,&user_wants_to_continue) );
+    }
+    return 0;
 }

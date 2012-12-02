@@ -1,8 +1,14 @@
 #include "controller.h"
 
+char* controller_initialize(Controller *this)
+{
+    this->halt = 0;
+    return 0;
+}
+
 char* controller_run_step(Controller *this, ALU *alu, Registers *registers, Memory *memory)
 {
-    this->halt = 0; //reset halt?
+    if(this->halt) return "program halted";
 
     Register temp;
     Register ir;
@@ -204,22 +210,22 @@ Register _controller_util_sext(Register in, unsigned short bits)
     for(i = 0; i < bits; i++)
         bitmask = bitmask | (1<<i);
 
-    printf(" %x %x %x\n",in, bitmask, i);
+    //printf(" %x %x %x\n",in, bitmask, i);
     in = in & bitmask;
-    printf(" %x %x %x\n",in, bitmask, i);
+    //printf(" %x %x %x\n",in, bitmask, i);
     bitmask = bitmask >> 1; //shift 1s right one;
-    printf(" %x %x %x\n",in, bitmask, i);
+    //printf(" %x %x %x\n",in, bitmask, i);
     Register sign = in & ~bitmask;
-    printf(" %x %x %x %x\n",in, bitmask, i, sign);
+    //printf(" %x %x %x %x\n",in, bitmask, i, sign);
 
     for(; i <= 16; i++)
     {
-        printf("*%x %x %x %x\n",in, bitmask, i, sign);
+        //printf("*%x %x %x %x\n",in, bitmask, i, sign);
         sign = sign << 1;
         in = in | sign;
     }
-    printf(" %x %x %x\n",in, bitmask, i);
-    printf("**********\n");
+    //printf(" %x %x %x\n",in, bitmask, i);
+    //printf("**********\n");
 
     return in;
 }
@@ -243,10 +249,10 @@ void _controller_util_setcc(Controller *this,PSR *psr,Register value)
 
 
 //controller test driver
-int main()
-{
-    printf("%d\n",(short)_controller_util_sext(0b11,2));
-    printf("%d\n",(short)_controller_util_sext(0b01,2));
-    printf("%d\n",(short)_controller_util_sext(0b11,3));
-    printf("%d\n",(short)_controller_util_sext(0b101,3));
-}
+//int main()
+//{
+//    printf("%d\n",(short)_controller_util_sext(0b11,2));
+//    printf("%d\n",(short)_controller_util_sext(0b01,2));
+//    printf("%d\n",(short)_controller_util_sext(0b11,3));
+//    printf("%d\n",(short)_controller_util_sext(0b101,3));
+//}
