@@ -9,6 +9,16 @@ char* debug_monitor( Debug *this, CPU *cpu , Registers *registers , Memory *memo
 {
 
 	Register register_ptr;
+	Register register_ptr2;
+	// get the 8 general purpose registers
+	int i;
+//	printf("\n"); //printf("General Purpose Registers:\n");
+	for(i=0;i<4;i++) {
+		registers_get_register(registers,&register_ptr,i);
+		registers_get_register(registers,&register_ptr2,i+4);
+		printf("R%d: %04x\tR%d: %04x\n",i,register_ptr,i+4,register_ptr2);
+	}
+	printf("\n");
 
 	//IR
 	registers_get_register(registers,&register_ptr,REG_IR);
@@ -17,13 +27,6 @@ char* debug_monitor( Debug *this, CPU *cpu , Registers *registers , Memory *memo
 	//PC
 	registers_get_register(registers,&register_ptr,REG_PC);
 	printf("PC: %04x\n",register_ptr);   ///this needs a value to print
-	// get the 8 general purpose registers
-	int i;
-	printf("General Purpose Registers:\n");
-	for(i=0;i<8;i++) {
-		registers_get_register(registers,&register_ptr,i);
-		printf("R%d: %04x\n",i,register_ptr);
-	}
 
 	//MAR
 	registers_get_register(registers,&register_ptr,REG_MAR);
@@ -66,7 +69,7 @@ char* debug_do_step_ask( Debug *this, CPU *cpu , Registers *registers, Memory *m
             //printf("\t\tInvalid input!\n");
             while (getchar() != '\n'); //remove offending characters
             retry = 1;
-        } else if(*1result < 0 || *result > 2) {
+        } else if(*result < 0 || *result > 2) {
             //printf("\t\tOut of bounds!\n");
             retry = 1;
         }

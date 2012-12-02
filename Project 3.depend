@@ -200,7 +200,7 @@
 	"alu.h"
 	"memory.h"
 
-1354489083 source:c:\users\mojito\documents\github\tcss371_final_project\debug.c
+1354489430 source:c:\users\mojito\documents\github\tcss371_final_project\debug.c
 	"debug.h"
 
 1354488347 c:\users\mojito\documents\github\tcss371_final_project\debug.h
@@ -226,7 +226,7 @@
 1354356318 source:c:\users\mojito\documents\github\tcss371_final_project\registers.c
 	"registers.h"
 
-1354488814 source:c:\users\mojito\documents\github\tcss371_final_project\lc-plus.c
+1354489463 source:c:\users\mojito\documents\github\tcss371_final_project\lc-plus.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>

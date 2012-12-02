@@ -37,6 +37,7 @@ int _main_lc_plus_loop()
 
     //the main loop
     int user_wants_to_continue = 0;
+    _main_error( debug_monitor( &debug, &cpu , &registers , &memory) );
     _main_error( debug_do_step_ask( &debug, &cpu , &registers , &memory ,&user_wants_to_continue) );
     while(user_wants_to_continue) {
         _main_error( cpu_run_step(&cpu, &memory, &registers) );
