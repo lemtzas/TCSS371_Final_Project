@@ -200,10 +200,10 @@
 	"alu.h"
 	"memory.h"
 
-1354489494 source:c:\users\mojito\documents\github\tcss371_final_project\debug.c
+1354499833 source:c:\users\mojito\documents\github\tcss371_final_project\debug.c
 	"debug.h"
 
-1354488347 c:\users\mojito\documents\github\tcss371_final_project\debug.h
+1354499854 c:\users\mojito\documents\github\tcss371_final_project\debug.h
 	"memory.h"
 	"CPU.h"
 	"bit_def.h"
@@ -252,7 +252,7 @@
 1354491845 source:c:\users\mojito\documents\github\tcss371_final_project\read_file.c
 	"read_file.h"
 
-1354493837 source:c:\users\mojito\documents\github\tcss371_final_project\debug_display.c
+1354500569 source:c:\users\mojito\documents\github\tcss371_final_project\debug_display.c
 	"debug_display.h"
 	<stdio.h>
 

@@ -15,6 +15,9 @@
 
 ///Debug storage
 typedef struct {
+    unsigned short line;
+    unsigned short start;
+    unsigned short end;
 } Debug;
 
 //initializes the debug structure

@@ -2,6 +2,9 @@
 
 char* debug_initialize( Debug *this )
 {
+    this->line = 0;
+    this->start = 0;
+    this->end = this->start + 0xF;
     return 0;
 }
 //Displays the current status of all registers
