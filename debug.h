@@ -7,6 +7,7 @@
 #include "register.h"
 #include "registers.h"
 #include "psr.h"
+//#include "debug_display.h"
 
 #define STOPDEBUG 0
 #define VIEWDEBUG 1

@@ -157,7 +157,7 @@
 	<stdio.h>
 	"bit_def.h"
 
-1354362192 source:c:\users\mojito\documents\github\tcss371_final_project\cpu.c
+1354559080 source:c:\users\mojito\documents\github\tcss371_final_project\cpu.c
 	"CPU.h"
 
 1354362670 c:\users\mojito\documents\github\tcss371_final_project\cpu.h
@@ -191,21 +191,24 @@
 1353125990 c:\users\mojito\documents\github\tcss371_final_project\psr.h
 	"register.h"
 
-1354508766 source:c:\users\mojito\documents\github\tcss371_final_project\controller.c
+1354559182 source:c:\users\mojito\documents\github\tcss371_final_project\controller.c
 	"controller.h"
 
-1354508586 c:\users\mojito\documents\github\tcss371_final_project\controller.h
+1354559162 c:\users\mojito\documents\github\tcss371_final_project\controller.h
 	"register.h"
 	"registers.h"
 	"alu.h"
 	"memory.h"
+	"not_gate.h"
+	"or_gate.h"
+	"and_gate.h"
 
-1354505935 source:c:\users\mojito\documents\github\tcss371_final_project\debug.c
+1354559223 source:c:\users\mojito\documents\github\tcss371_final_project\debug.c
 	"debug.h"
 	"debug_display.h"
 	"read_file.h"
 
-1354499854 c:\users\mojito\documents\github\tcss371_final_project\debug.h
+1354559352 c:\users\mojito\documents\github\tcss371_final_project\debug.h
 	"memory.h"
 	"CPU.h"
 	"bit_def.h"
@@ -213,7 +216,7 @@
 	"registers.h"
 	"psr.h"
 
-1354348212 source:c:\users\mojito\documents\github\tcss371_final_project\main.c
+1354559416 source:c:\users\mojito\documents\github\tcss371_final_project\main.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
@@ -228,7 +231,7 @@
 1354356318 source:c:\users\mojito\documents\github\tcss371_final_project\registers.c
 	"registers.h"
 
-1354505935 source:c:\users\mojito\documents\github\tcss371_final_project\lc-plus.c
+1354559390 source:c:\users\mojito\documents\github\tcss371_final_project\lc-plus.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
@@ -243,7 +246,7 @@
 	"alu.h"
 	"read_file.h"
 
-1354505935 source:c:\users\mojito\documents\github\tcss371_final_project\memory.c
+1354559459 source:c:\users\mojito\documents\github\tcss371_final_project\memory.c
 	"memory.h"
 
 1354505935 c:\users\mojito\documents\github\tcss371_final_project\read_file.h
@@ -251,11 +254,11 @@
 	<stdlib.h>
 	"memory.h"
 
-1354505935 source:c:\users\mojito\documents\github\tcss371_final_project\read_file.c
+1354559633 source:c:\users\mojito\documents\github\tcss371_final_project\read_file.c
 	"read_file.h"
 	"debug_display.h"
 
-1354505935 source:c:\users\mojito\documents\github\tcss371_final_project\debug_display.c
+1354559242 source:c:\users\mojito\documents\github\tcss371_final_project\debug_display.c
 	"debug_display.h"
 	<stdio.h>
 

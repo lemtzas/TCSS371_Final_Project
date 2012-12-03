@@ -5,6 +5,9 @@
 #include "registers.h"
 #include "alu.h"
 #include "memory.h"
+#include "not_gate.h"
+#include "or_gate.h"
+#include "and_gate.h"
 
 //0b0001
 #define OPCODE_ADD  0x1

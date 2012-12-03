@@ -8,11 +8,12 @@ int _main_temp_testing()
 {
     Memory memory;
     memory_initialize(&memory);
+    return 0;
 }
 
 
 
-void _main_error(error)
+void _main_error(char* error)
 {
     if(error)
     {
@@ -24,7 +25,6 @@ void _main_error(error)
 //manual test and simulation driver for alu.c (PROJECT 3)
 int _main_lc_plus_loop()
 {
-    char* error = 0;
     Memory memory;
     Registers registers;
     CPU cpu;

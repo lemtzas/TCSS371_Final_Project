@@ -24,7 +24,7 @@ char* debug_do_step_ask( Debug *this, CPU *cpu , Registers *registers, Memory *m
     int answer = 0;
     char* error;
     do {
-        printf("1) Load, 2) Run, 3) Clear Mem, 4) Show Mem, 5) Exit\n");
+        printf("1) Load, 2) Step, 3) Run, 4) Show Mem, 5) Clear Mem, 6) Exit\n");
         printf("\033[%d;%dH\n\n\n\n\n",_D_INPUT_SX,_D_INPUT_SY);
         printf("\033[%d;%dH::                                                                              ",_D_INPUT_SX,_D_INPUT_SY);
         printf("\033[%d;%dH                                                                                ",_D_INPUT_SX+1,_D_INPUT_SY);
@@ -37,7 +37,7 @@ char* debug_do_step_ask( Debug *this, CPU *cpu , Registers *registers, Memory *m
         do
         {
             retry = 0;
-            printf("\033[%d;%dH\n\n\n\n\n",_D_INPUT_SX,_D_INPUT_SY);
+            //printf("\033[%d;%dH\n\n\n\n\n",_D_INPUT_SX,_D_INPUT_SY);
             printf("\033[%d;%dH::                                                                              ",_D_INPUT_SX,_D_INPUT_SY);
 //            printf("\033[%d;%dH                                                                                ",_D_INPUT_SX+1,_D_INPUT_SY);
 //            printf("\033[%d;%dH                                                                                ",_D_INPUT_SX+2,_D_INPUT_SY);
@@ -62,6 +62,8 @@ char* debug_do_step_ask( Debug *this, CPU *cpu , Registers *registers, Memory *m
         switch(answer)
         {
             case 1:
+                printf("\033[%d;%dH                                                                                ",_D_INPUT_SX,_D_INPUT_SY);
+                printf("\033[%d;%dH:: LOAD",_D_INPUT_SX+1,_D_INPUT_SY);
                 memory_initialize(memory);
                 registers_initialize(registers);
                 cpu_initialize(cpu);
@@ -70,17 +72,26 @@ char* debug_do_step_ask( Debug *this, CPU *cpu , Registers *registers, Memory *m
                 _debug_monitor_helper(this,cpu,registers,memory);
                 break;
             case 2:
+                printf("\033[%d;%dH                                                                                ",_D_INPUT_SX,_D_INPUT_SY);
+                printf("\033[%d;%dH:: STEP",_D_INPUT_SX+1,_D_INPUT_SY);
                 error = cpu_run_step(cpu, registers, memory);
-                this->line = registers->pc;
+                _debug_monitor_helper_set_line(this,registers->pc);
                 _debug_monitor_helper(this,cpu,registers,memory);
                 break;
             case 3:
-                memory_initialize(memory);
-                _debug_monitor_helper(this,cpu,registers,memory);
+                do{
+                printf("\033[%d;%dH                                                                                ",_D_INPUT_SX,_D_INPUT_SY);
+                printf("\033[%d;%dH:: RUN",_D_INPUT_SX+1,_D_INPUT_SY);
+                    error = cpu_run_step(cpu, registers, memory);
+                    _debug_monitor_helper_set_line(this,registers->pc);
+                    _debug_monitor_helper(this,cpu,registers,memory);
+                } while(!cpu->controller.halt && registers->pc <= LCPLUS_MEMORY_SIZE);
                 break;
             case 4:
             {
-                unsigned short location;
+                printf("\033[%d;%dH                                                                                ",_D_INPUT_SX,_D_INPUT_SY);
+                printf("\033[%d;%dH:: GOTO",_D_INPUT_SX+1,_D_INPUT_SY);
+                int location;
                 do
                 {
                     retry = 0;
@@ -104,6 +115,14 @@ char* debug_do_step_ask( Debug *this, CPU *cpu , Registers *registers, Memory *m
             }
                 break;
             case 5:
+                printf("\033[%d;%dH                                                                                ",_D_INPUT_SX,_D_INPUT_SY);
+                printf("\033[%d;%dH:: CLEARMEM",_D_INPUT_SX+1,_D_INPUT_SY);
+                memory_initialize(memory);
+                _debug_monitor_helper(this,cpu,registers,memory);
+                break;
+            case 6:
+                printf("\033[%d;%dH                                                                                ",_D_INPUT_SX,_D_INPUT_SY);
+                printf("\033[%d;%dH:: QUIT",_D_INPUT_SX+1,_D_INPUT_SY);
                 (*result) = 0;
                 _debug_monitor_helper(this,cpu,registers,memory);
                 break;

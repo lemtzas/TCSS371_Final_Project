@@ -44,7 +44,7 @@ char* controller_run_step(Controller *this, ALU *alu, Registers *registers, Memo
 
     ///DECODE
     Register opcode = ((_DATAMASK_OPCODE*)(&ir))->code;
-    printf("\033[1;65H%x",opcode,_controller_util_sext(((_DATAMASK_LD*)(&ir))->pcoffset9,9));
+    //printf("\033[1;65H%x",opcode,_controller_util_sext(((_DATAMASK_LD*)(&ir))->pcoffset9,9));
 
     ///EVALUATE ADDRESS
     Register addr;
@@ -236,7 +236,7 @@ Register _controller_util_sext(Register in, unsigned short bits)
 
 void _controller_util_setcc(Controller *this,PSR *psr,Register value)
 {
-    Bit n,z,p,tmp;
+    Bit n,z,tmp;
     register_get_bit(&value,15,&n);
 
     //determine z

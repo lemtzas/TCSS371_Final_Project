@@ -17,6 +17,7 @@
 #include "registers.h"
 #include "memory.h"
 
+char* _debug_monitor_helper_set_line(Debug *this, unsigned short line);
 char* _debug_monitor_helper( Debug *this, CPU *cpu , Registers *registers , Memory *memory );
 
 #endif

@@ -18,7 +18,7 @@ char* memory_get( Memory *this, Registers *registers)
     registers_get_register(registers,&mar_tmp,REG_MAR);
 
     if(this == 0) return "memory_get: this must not be null";
-    if(mar_tmp >= LCPLUS_MEMORY_SIZE || mar_tmp < 0 ) return "memory_get: mar out of range";
+    if(mar_tmp >= LCPLUS_MEMORY_SIZE ) return "memory_get: mar out of range";
 
     mdr_tmp = this->location[mar_tmp];
 
@@ -37,7 +37,7 @@ char* memory_set( Memory *this , Registers *registers)
     registers_get_register(registers,&mar_tmp,REG_MAR);
 
     if(this == 0) return "memory_set: this must not be null";
-    if(mar_tmp >= LCPLUS_MEMORY_SIZE || mar_tmp < 0 ) return "memory_set: mar out of range";
+    if(mar_tmp >= LCPLUS_MEMORY_SIZE ) return "memory_set: mar out of range";
 
     this->location[mar_tmp] = mdr_tmp;
 

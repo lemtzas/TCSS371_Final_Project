@@ -60,6 +60,7 @@ char* _debug_monitor_helper( Debug *this, CPU *cpu , Registers *registers , Memo
 
     //end in a reasonable place
     printf("\033[%d;%dH:",_D_FINAL_SX,_D_FINAL_SY);
+    return 0;
 }
 
 ///Debug Monitor Helper test driver

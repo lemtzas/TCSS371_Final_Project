@@ -38,7 +38,7 @@ int p3main()
     printf("\nInput values as 16 bit hexadecimal numbers, e.g. FA35 (no leading 0x)\n");
     printf("\nRegisters will be loaded in order from R0 to R%d\n\n",reg_init_count-1);
     res = 0;
-    unsigned short temp;
+    unsigned int temp;
     for(i = 0; i < reg_init_count; i++) {
         do {
             retry = false;

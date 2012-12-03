@@ -4,8 +4,7 @@
 char* readFile(Memory *memory) {
     FILE *fp;
     int i=0;
-    char* string;
-    Register* temp;
+    unsigned int temp;
     char file[256];
     char retry;
     int res;
@@ -14,7 +13,6 @@ char* readFile(Memory *memory) {
         retry = 0;
         printf("\033[%d;%dH                                                                                ",_D_INPUT_SX+1,_D_INPUT_SY);
         printf("\033[%d;%dHEnter a File Name (max 256 chars): ",_D_INPUT_SX+1,_D_INPUT_SY);
-        printf("");
         res = scanf("%s", file);
         if(res == 0) {
             printf("\033[%d;%dH                                                                                ",_D_INPUT_SX+2,_D_INPUT_SY);
