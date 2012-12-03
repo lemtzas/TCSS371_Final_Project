@@ -6,23 +6,35 @@
 #include "alu.h"
 #include "memory.h"
 
-#define OPCODE_ADD  0b0001
-#define OPCODE_AND  0b0101
-#define OPCODE_SUB  0b1101
+//0b0001
+#define OPCODE_ADD  0x1
+//0b0101
+#define OPCODE_AND  0x5
+//0b1101
+#define OPCODE_SUB  0xD
 
-#define OPCODE_NOT  0b1001
+//0b1001
+#define OPCODE_NOT  0x9
 
-#define OPCODE_BR   0b0000
-#define OPCODE_JMP  0b1100
+//0b0000
+#define OPCODE_BR   0x0
+//0b1100
+#define OPCODE_JMP  0xC
 
-#define OPCODE_LD   0b0010
-#define OPCODE_LDR  0b0110
-#define OPCODE_LEA  0b1110
+//0b0010
+#define OPCODE_LD   0x2
+//0b0110
+#define OPCODE_LDR  0x6
+//0b1110
+#define OPCODE_LEA  0xE
 
-#define OPCODE_ST   0b0011
-#define OPCODE_STR  0b0111
+//0b0011
+#define OPCODE_ST   0x3
+//0b0111
+#define OPCODE_STR  0x7
 
-#define OPCODE_HALT 0b1000
+//0b1000
+#define OPCODE_HALT 0x8
 
 typedef struct {
     Bit halt;

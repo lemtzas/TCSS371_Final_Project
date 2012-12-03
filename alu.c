@@ -37,10 +37,10 @@ char* ALU_operation_add(ALU* this,PSR* psr)
     this->result = rippleCarryAdderGetResult(&rca,0);
     unsigned char flags = rippleCarryAdderGetFlags(&rca,0);
     //interpret the flags
-    Bit n = (flags>>3)&0b1;
-    Bit z = (flags>>2)&0b1;
-    Bit c = (flags>>1)&0b1;
-    Bit o = (flags)&0b1;
+    Bit n = (flags>>3)&1;
+    Bit z = (flags>>2)&1;
+    Bit c = (flags>>1)&1;
+    Bit o = (flags)&1;
     //set them if we were given a psr
     if(psr) PSR_set_nzco(psr,n,z,c,o);
 

@@ -24,7 +24,7 @@ char* register_get_bit(Register* this,int bit,Bit *result)
 char* register_set_bit(Register* this, int bit, Bit state)
 {
     if(bit<0 || bit>15) return "Bit location out of range.";
-    Register mask = 0b1 << bit;
+    Register mask = 1 << bit;
     if( state )
         (*this) = (*this) | mask;
     else

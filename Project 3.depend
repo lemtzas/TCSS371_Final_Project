@@ -131,7 +131,7 @@
 	<stdio.h>
 	"bit_def.h"
 
-1353040695 source:c:\users\mojito\documents\github\tcss371_final_project\rca.c
+1354493773 source:c:\users\mojito\documents\github\tcss371_final_project\rca.c
 	"rca.h"
 	"or_gate.h"
 	"xor_gate.h"
@@ -173,7 +173,7 @@
 	"register.h"
 	"psr.h"
 
-1354469897 source:c:\users\mojito\documents\github\tcss371_final_project\alu.c
+1354493123 source:c:\users\mojito\documents\github\tcss371_final_project\alu.c
 	"alu.h"
 	"register.h"
 	"bit_def.h"
@@ -194,7 +194,7 @@
 1354492053 source:c:\users\mojito\documents\github\tcss371_final_project\controller.c
 	"controller.h"
 
-1354471211 c:\users\mojito\documents\github\tcss371_final_project\controller.h
+1354493763 c:\users\mojito\documents\github\tcss371_final_project\controller.h
 	"register.h"
 	"registers.h"
 	"alu.h"
@@ -220,13 +220,13 @@
 1353125967 source:c:\users\mojito\documents\github\tcss371_final_project\psr.c
 	"psr.h"
 
-1353126150 source:c:\users\mojito\documents\github\tcss371_final_project\register.c
+1354493777 source:c:\users\mojito\documents\github\tcss371_final_project\register.c
 	"register.h"
 
 1354356318 source:c:\users\mojito\documents\github\tcss371_final_project\registers.c
 	"registers.h"
 
-1354490795 source:c:\users\mojito\documents\github\tcss371_final_project\lc-plus.c
+1354492402 source:c:\users\mojito\documents\github\tcss371_final_project\lc-plus.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
@@ -249,6 +249,16 @@
 	<stdlib.h>
 	"memory.h"
 
-1354491623 source:c:\users\mojito\documents\github\tcss371_final_project\read_file.c
+1354491845 source:c:\users\mojito\documents\github\tcss371_final_project\read_file.c
 	"read_file.h"
+
+1354493837 source:c:\users\mojito\documents\github\tcss371_final_project\debug_display.c
+	"debug_display.h"
+	<stdio.h>
+
+1354492090 c:\users\mojito\documents\github\tcss371_final_project\debug_display.h
+	"debug.h"
+	"cpu.h"
+	"registers.h"
+	"memory.h"
 

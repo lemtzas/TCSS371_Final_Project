@@ -41,9 +41,9 @@ int rippleCarryAdderAdd(RippleCarryAdderPtr this)
 
     ///perform addition
     int i;                  //the current bit (from right)
-    Bit o = 0b0;            //output of carry
-    Bit c = 0b0;            //carry bit (in)
-    Bit co = 0b0;           //carry bit (out)
+    Bit o = 0;            //output of carry
+    Bit c = 0;            //carry bit (in)
+    Bit co = 0;           //carry bit (out)
     for(i=0; i < 16; i++)
     {
         o = fullAdder(getBit(this->A,i), getBit(this->B,i), c, &co);
