@@ -29,18 +29,22 @@ char* controller_run_step(Controller *this, ALU *alu, Registers *registers, Memo
     registers_get_register(registers,&pc,REG_PC);
     registers_set_register(registers,pc,REG_MAR);
 
-    //PC <- PC + 1
-    registers_set_register(registers,++pc,REG_PC);
-
     //LOAD MEMORY
     memory_get(memory,registers);
 
     //IR <- MDR
     registers_get_register(registers,&ir,REG_MDR);
     registers_set_register(registers,ir,REG_IR);
+    registers_get_register(registers,&ir,REG_IR);
+
+    //printf("\033[1;65H%X %x",pc,ir);
+
+    //PC <- PC + 1
+    registers_set_register(registers,++pc,REG_PC);
 
     ///DECODE
     Register opcode = ((_DATAMASK_OPCODE*)(&ir))->code;
+    printf("\033[1;65H%x",opcode,_controller_util_sext(((_DATAMASK_LD*)(&ir))->pcoffset9,9));
 
     ///EVALUATE ADDRESS
     Register addr;

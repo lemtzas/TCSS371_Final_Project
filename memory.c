@@ -22,7 +22,7 @@ char* memory_get( Memory *this, Registers *registers)
 
     mdr_tmp = this->location[mar_tmp];
 
-    registers_get_register(registers,mdr_tmp,REG_MDR);
+    registers_set_register(registers,mdr_tmp,REG_MDR);
 
     return 0;
 }

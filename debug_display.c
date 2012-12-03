@@ -1,15 +1,6 @@
 #include "debug_display.h"
 #include <stdio.h>
 
-#define _D_REG_SX 2
-#define _D_REG_SY 0
-#define _D_REG_SP_SX 13
-#define _D_REG_SP_SY 0
-#define _D_MEM_SX 0
-#define _D_MEM_SY 40
-#define _D_FINAL_SX 19
-#define _D_FINAL_SY 0
-
 char* _debug_monitor_helper_set_line(Debug *this, unsigned short line)
 {
     this->line = line;
@@ -71,18 +62,19 @@ char* _debug_monitor_helper( Debug *this, CPU *cpu , Registers *registers , Memo
     printf("\033[%d;%dH:",_D_FINAL_SX,_D_FINAL_SY);
 }
 
-int main()
-{
-    Debug debug;
-    CPU cpu;
-    Registers registers;
-    Memory memory;
-
-    debug_initialize(&debug);
-    cpu_initialize(&cpu);
-    registers_initialize(&registers);
-    memory_initialize(&memory);
-
-    _debug_monitor_helper_set_line(&debug, 0x0080);
-    _debug_monitor_helper(&debug,&cpu,&registers,&memory);
-}
+///Debug Monitor Helper test driver
+//int main()
+//{
+//    Debug debug;
+//    CPU cpu;
+//    Registers registers;
+//    Memory memory;
+//
+//    debug_initialize(&debug);
+//    cpu_initialize(&cpu);
+//    registers_initialize(&registers);
+//    memory_initialize(&memory);
+//
+//    _debug_monitor_helper_set_line(&debug, 0x0080);
+//    _debug_monitor_helper(&debug,&cpu,&registers,&memory);
+//}

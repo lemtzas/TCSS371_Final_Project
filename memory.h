@@ -8,7 +8,7 @@
 
 
 typedef struct {
-    Register location[LCPLUS_MEMORY_SIZE];
+    Register location[LCPLUS_MEMORY_SIZE+1];
 } Memory;
 
 char* memory_initialize( Memory *this );

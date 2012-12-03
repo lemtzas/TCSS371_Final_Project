@@ -6,9 +6,9 @@
 #include "memory.h"
 
 ///Reads a file into Memory starting at 0x0000
-//file: filename
+//filename is requested when run
 //memory: existing Memory object to read the data into
 //returns error string, if any; zero otherwise
-char* readFile(char* file,Memory* memory);
+char* readFile(Memory* memory);
 
 #endif
