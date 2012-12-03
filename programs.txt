@@ -145,32 +145,32 @@ in memory so that it is negative and then since the branch is not taken
 location. 
 
 PC:
-0	LD      R1, #1      ;load into R1, the value in mem addr 2
+0	LD      R2, #1      ;load into R2, the value in mem addr 2
 1	BRconzp     #1      ;load 3 into the PC unconditionally
-2	000A                ;value for R1, should never be run as an opcode	(switch to 800A for other branch)
-3	NOT     R2, R1
+2	000A                ;value for R2, should never be run as an opcode	(switch to 800A for other branch)
+3	NOT     R1, R2
 4	BRn     #5          ;set the PC to 10 on negative branch
-5	NOT     R1, R2
+5	NOT     R2, R1
 6	BRp     #5          ;set the PC to 12 on positive branch
-7	ST      R1, #-6     ;store the value in R1 at mem addr 2
-8	BRconzp     #4      ;load 13 into the PC unconditionally
-9
-10	ST      R2, #9      ;store the value in R2 at mem addr 20 (NEGVAL)
+7	ST      R2, #-6     ;store the value in R2 at mem addr 2
+8	BRconzp     #4      ;load 13 into the PC unconditionally	
+9	
+10	ST      R1, #9      ;store the value in R1 at mem addr 20 (NEGVAL)
 11	BRconzp     #-7     ;load 5 into the PC unconditionally
-12	ST      R1, #8      ;store the value in R1 at mem addr 21 (POSVAL)
-13	HALT
+12	ST      R2, #8      ;store the value in R2 at mem addr 21 (POSVAL)
+13	HALT	
 
-0	0010 0010 0000 0001		2201
-1	0000 1111 1000 0001		0F81
-2	0000 0000 0000 1010		000A	or	1000 0000 0000 1010		800A
-3	1001 0100 0111 1111		947F
-4	0000 0010 0000 0101		0205
-5	1001 0010 1011 1111		92BF
-6	0000 0000 1000 0101		0085
-7	0011 0011 1111 0111		33F7
-8	0000 1111 1000 0100		0F84
-9	0000 0000 0000 0000		0000	This line deliberately left empty to test empty branch.
-10	0011 0100 0000 1001		3409
-11	0000 1111 1111 1001		0FF9
-12	0011 0010 0000 1000		3208
-13	1000 0000 0000 0000		8000
+0	0010 0010 0000 0001		0x2201
+1	0000 1111 1000 0001		0x0F81
+2	0000 0000 0000 1010		0x000A	or	1000 0000 0000 1010		800A
+3	1001 0010 1011 1111		0x92BF
+4	0000 0010 0000 0101		0x0205
+5	1001 0100 0111 1111		0x947F
+6	0000 0000 1000 0101		0x0085
+7	0011 0101 1111 1010		0x35FA
+8	0000 1111 1000 0100		0x0F84
+9	0000 0000 0000 0000		0x0000	This line deliberately left empty to test empty branch.
+10	0011 0010 0000 1001		0x3409
+11	0000 1111 1111 1001		0x0FF9
+12	0011 0100 0000 1000		0x3408
+13	1000 0000 0000 0000		0x8000
