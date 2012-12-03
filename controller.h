@@ -53,127 +53,127 @@ void _controller_util_setcc(Controller *this,PSR *psr,Register value);
 
 ///OPCODE
 typedef struct {
-    unsigned short code:4;
     unsigned short junk:12;
-} _DATAMASK_OPCODE;
+    unsigned short code:4;
+} _DATAMASK_OPCODE; //i
 
 ///ADD
 typedef struct {
-    unsigned short code:4;
-    unsigned short dr:3;
-    unsigned short sr1:3;
-    unsigned short zeros:3;
     unsigned short sr2:3;
-} _DATAMASK_ADD_REGS;
+    unsigned short zeros:3;
+    unsigned short sr1:3;
+    unsigned short dr:3;
+    unsigned short code:4;
+} _DATAMASK_ADD_REGS; //i
 
 typedef struct {
-    unsigned short code:4;
-    unsigned short dr:3;
-    unsigned short sr1:3;
-    unsigned short one:1;
     signed short imm5:5;     //signed for bit extend?
-} _DATAMASK_ADD_IMM5;
+    unsigned short one:1;
+    unsigned short sr1:3;
+    unsigned short dr:3;
+    unsigned short code:4;
+} _DATAMASK_ADD_IMM5; //i
 
 ///AND
 typedef struct {
-    unsigned short code:4;
-    unsigned short dr:3;
-    unsigned short sr1:3;
-    unsigned short zeros:3;
     unsigned short sr2:3;
-} _DATAMASK_AND_REGS;
+    unsigned short zeros:3;
+    unsigned short sr1:3;
+    unsigned short dr:3;
+    unsigned short code:4;
+} _DATAMASK_AND_REGS; //i
 
 typedef struct {
-    unsigned short code:4;
-    unsigned short dr:3;
-    unsigned short sr1:3;
-    unsigned short one:1;
     signed short imm5:5;     //signed for bit extend?
-} _DATAMASK_AND_IMM5;
+    unsigned short one:1;
+    unsigned short sr1:3;
+    unsigned short dr:3;
+    unsigned short code:4;
+} _DATAMASK_AND_IMM5; //i
 
 ///SUB
 typedef struct {
-    unsigned short code:4;
-    unsigned short dr:3;
-    unsigned short sr1:3;
-    unsigned short zeros:3;
     unsigned short sr2:3;
-} _DATAMASK_SUB_REGS;
+    unsigned short zeros:3;
+    unsigned short sr1:3;
+    unsigned short dr:3;
+    unsigned short code:4;
+} _DATAMASK_SUB_REGS; //i
 
 typedef struct {
-    unsigned short code:4;
-    unsigned short dr:3;
-    unsigned short sr1:3;
-    unsigned short one:1;
     signed short imm5:5;     //signed for bit extend?
-} _DATAMASK_SUB_IMM5;
+    unsigned short one:1;
+    unsigned short sr1:3;
+    unsigned short dr:3;
+    unsigned short code:4;
+} _DATAMASK_SUB_IMM5; //i
 
 ///NOT
 typedef struct {
-    unsigned short code:4;
-    unsigned short dr:3;
-    unsigned short sr1:3;
     unsigned short ones:6;
-} _DATAMASK_NOT;
+    unsigned short sr1:3;
+    unsigned short dr:3;
+    unsigned short code:4;
+} _DATAMASK_NOT; //i
 
 ///HALT
 typedef struct {
-    unsigned short code:4;
     unsigned short zeros:12;
+    unsigned short code:4;
 } _DATAMASK_HALT;
 
 ///JMP
 typedef struct {
-    unsigned short code:4;
-    unsigned short zeros:3;
-    unsigned short baser:3;
     unsigned short zeros2:6;
-} _DATAMASK_JMP;
+    unsigned short baser:3;
+    unsigned short zeros:3;
+    unsigned short code:4;
+} _DATAMASK_JMP; //i
 
 ///BR
 typedef struct {
-    unsigned short code:4;
-    unsigned short c:1;
-    unsigned short o:1;
-    unsigned short n:1;
-    unsigned short z:1;
-    unsigned short p:1;
     signed short pcoffset7:7;
-} _DATAMASK_BR;
+    unsigned short p:1;
+    unsigned short z:1;
+    unsigned short n:1;
+    unsigned short o:1;
+    unsigned short c:1;
+    unsigned short code:4;
+} _DATAMASK_BR; //i
 
 ///LDs
 typedef struct {
-    unsigned short code:4;
-    unsigned short dr:3;
     unsigned short pcoffset9:9;
-} _DATAMASK_LD;
+    unsigned short dr:3;
+    unsigned short code:4;
+} _DATAMASK_LD; //i
 
 typedef struct {
-    unsigned short code:4;
-    unsigned short dr:3;
-    unsigned short baser:3;
     unsigned short pcoffset6:6;
-} _DATAMASK_LDR;
+    unsigned short baser:3;
+    unsigned short dr:3;
+    unsigned short code:4;
+} _DATAMASK_LDR; //i
 
 typedef struct {
-    unsigned short code:4;
-    unsigned short dr:3;
     unsigned short pcoffset9:9;
-} _DATAMASK_LEA;
+    unsigned short dr:3;
+    unsigned short code:4;
+} _DATAMASK_LEA; //i
 
 ///STs
 typedef struct {
-    unsigned short code:4;
-    unsigned short sr:3;
     unsigned short pcoffset9:9;
-} _DATAMASK_ST;
+    unsigned short sr:3;
+    unsigned short code:4;
+} _DATAMASK_ST; //i
 
 typedef struct {
-    unsigned short code:4;
-    unsigned short sr:3;
-    unsigned short baser:3;
     unsigned short pcoffset6:6;
-} _DATAMASK_STR;
+    unsigned short baser:3;
+    unsigned short sr:3;
+    unsigned short code:4;
+} _DATAMASK_STR; //i
 
 
 

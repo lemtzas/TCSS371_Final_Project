@@ -165,7 +165,7 @@
 	"memory.h"
 	"registers.h"
 
-1354501906 c:\users\mojito\documents\github\tcss371_final_project\memory.h
+1354505935 c:\users\mojito\documents\github\tcss371_final_project\memory.h
 	"register.h"
 	"registers.h"
 
@@ -191,16 +191,16 @@
 1353125990 c:\users\mojito\documents\github\tcss371_final_project\psr.h
 	"register.h"
 
-1354505785 source:c:\users\mojito\documents\github\tcss371_final_project\controller.c
+1354508766 source:c:\users\mojito\documents\github\tcss371_final_project\controller.c
 	"controller.h"
 
-1354493763 c:\users\mojito\documents\github\tcss371_final_project\controller.h
+1354508586 c:\users\mojito\documents\github\tcss371_final_project\controller.h
 	"register.h"
 	"registers.h"
 	"alu.h"
 	"memory.h"
 
-1354504039 source:c:\users\mojito\documents\github\tcss371_final_project\debug.c
+1354505935 source:c:\users\mojito\documents\github\tcss371_final_project\debug.c
 	"debug.h"
 	"debug_display.h"
 	"read_file.h"
@@ -228,7 +228,7 @@
 1354356318 source:c:\users\mojito\documents\github\tcss371_final_project\registers.c
 	"registers.h"
 
-1354503661 source:c:\users\mojito\documents\github\tcss371_final_project\lc-plus.c
+1354505935 source:c:\users\mojito\documents\github\tcss371_final_project\lc-plus.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
@@ -243,23 +243,23 @@
 	"alu.h"
 	"read_file.h"
 
-1354504327 source:c:\users\mojito\documents\github\tcss371_final_project\memory.c
+1354505935 source:c:\users\mojito\documents\github\tcss371_final_project\memory.c
 	"memory.h"
 
-1354501181 c:\users\mojito\documents\github\tcss371_final_project\read_file.h
+1354505935 c:\users\mojito\documents\github\tcss371_final_project\read_file.h
 	<stdio.h>
 	<stdlib.h>
 	"memory.h"
 
-1354503373 source:c:\users\mojito\documents\github\tcss371_final_project\read_file.c
+1354505935 source:c:\users\mojito\documents\github\tcss371_final_project\read_file.c
 	"read_file.h"
 	"debug_display.h"
 
-1354502363 source:c:\users\mojito\documents\github\tcss371_final_project\debug_display.c
+1354505935 source:c:\users\mojito\documents\github\tcss371_final_project\debug_display.c
 	"debug_display.h"
 	<stdio.h>
 
-1354502363 c:\users\mojito\documents\github\tcss371_final_project\debug_display.h
+1354505935 c:\users\mojito\documents\github\tcss371_final_project\debug_display.h
 	"debug.h"
 	"cpu.h"
 	"registers.h"

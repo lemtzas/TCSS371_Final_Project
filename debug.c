@@ -66,6 +66,7 @@ char* debug_do_step_ask( Debug *this, CPU *cpu , Registers *registers, Memory *m
                 registers_initialize(registers);
                 cpu_initialize(cpu);
                 readFile(memory);
+                _debug_monitor_helper_set_line(this,registers->pc);
                 _debug_monitor_helper(this,cpu,registers,memory);
                 break;
             case 2:

@@ -86,10 +86,10 @@ char* controller_run_step(Controller *this, ALU *alu, Registers *registers, Memo
         case OPCODE_SUB: //sext and add op2 if imm, simply load op2 if not
             if(((_DATAMASK_ADD_IMM5*)(&ir))->one)   op2 = _controller_util_sext(((_DATAMASK_ADD_IMM5*)(&ir))->imm5,5);
             else                                    registers_get_register(registers,&op2,((_DATAMASK_ADD_REGS*)(&ir))->sr2);
+            ALU_set_src2(alu,op2);
         case OPCODE_NOT: //load op1 for all above as well as this
             registers_get_register(registers,&op1,((_DATAMASK_ADD_REGS*)(&ir))->sr1);
             ALU_set_src1(alu,op1);
-            ALU_set_src2(alu,op2);
             break;
         case OPCODE_ST:
         case OPCODE_STR:
