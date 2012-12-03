@@ -103,7 +103,7 @@ PC:
 2	7FFF                ;value for R1, should never be run as an opcode (switch to 6FFF for other branch)
 3	AND     R2, R2, #0  ;initialize R2
 4	ADD     R2, R2, #5  ;set R2 to 5
-5	LD      R4, #6      ;load R4 with the address for memory location 12 (HALT)
+5	LEA     R4, #6      ;load R4 with the address for memory location 12 (HALT)
 6	LD      R5, #13     ;set R5 to 20 (mem addr to store SR1 or SR2 depending on branch)
 7	ADD     R3, R1, R2  ;add R1 and R2, this should cause an overflow condition
 8	BRo     #2          ;set the PC to 11 on overflow branch
@@ -117,7 +117,7 @@ PC:
 2	0111 1111 1111 1111		0x7FFF	or	0110 1111 1111 1111		0x6FFF
 3	0101 0100 1010 0000		0x54A0
 4	0001 0100 1010 0101		0x14A5
-5	0010 1000 0000 0110		0x2806
+5	1110 1000 0000 0110		0xE806
 6	0010 1010 0000 1101		0x2A0D
 7	0001 0110 0100 0010		0x1642
 8	0000 0100 0000 0010		0x0402
