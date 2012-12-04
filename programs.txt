@@ -105,28 +105,30 @@ PC:
 2	7FFF                ;value for R1, should never be run as an opcode (switch to 6FFF for other branch)
 3	AND     R2, R2, #0  ;initialize R2
 4	ADD     R2, R2, #5  ;set R2 to 5
-5	LEA     R4, #6      ;load R4 with the address for memory location 12 (HALT)
+5	LEA     R4, #7      ;load R4 with the address for memory location 13 (HALT)
 6	LEA     R5, #13     ;set R5 to 20 (mem addr to store SR1 or SR2 depending on branch)
-7	ADD     R3, R1, R2  ;add R1 and R2, this should cause an overflow condition
-8	BRo     #2          ;set the PC to 11 on overflow branch
-9	STR     R2, R5, #0  ;store the value in R2 to mem addr 20
-10	JMP     R4          ;jump to HALT
-11	STR     R1, R5, #0  ;store the value in R1 to mem addr 20
-12	HALT
+7	ADD     R3, R1, R2  ;add R1 and R2, this should caue an overflow condition
+8	ST      R3, #10     ;store the result of the ADD in mem addr 19
+9	BRo     #2          ;set the PC to 12 on overflow branch
+10	STR     R2, R5, #0  ;store the value in R2 to mem addr 20
+11	JMP     R4          ;jump to HALT
+12	STR     R1, R5, #0  ;store the value in R1 to mem addr 20
+13	HALT
 
 0	0010 0010 0000 0001		0x2201
 1	0000 1111 1000 0001		0x0F81
 2	0111 1111 1111 1111		0x7FFF	or	0110 1111 1111 1111		0x6FFF
 3	0101 0100 1010 0000		0x54A0
 4	0001 0100 1010 0101		0x14A5
-5	1110 1000 0000 0110		0xE806
+5	1110 1000 0000 0111		0xE807
 6	1110 1010 0000 1101		0xEA0D
 7	0001 0110 0100 0010		0x1642
-8	0000 0100 0000 0010		0x0402
-9	0111 0101 0100 0000		0x7540
-10	1100 0001 0000 0000		0xC100
-11	0111 0011 0100 0000		0x7340
-12	1000 0000 0000 0000		0x8000
+8	0011 0110 0000 1010		0x360A
+9	0000 0100 0000 0010		0x0402
+10	0111 0101 0100 0000		0x7540
+11	1100 0001 0000 0000		0xC100
+12	0111 0011 0100 0000		0x7340
+13	1000 0000 0000 0000		0x8000
 
 Load a positive value into a register from memory and NOT it using a
 different destination register. Then branch on negative to a part of
