@@ -64,9 +64,9 @@ PC:
 13	STR R2, R3, #0  ;set mem addr 33 to the value stored in R2
 14	AND R4, R4, #0  ;initialize R4
 15	ADD R4, R4, #10 ;set R4 to 10
-16	ADD R4, R4, R4  ;double the value in R4
+16	ADD R4, R4, #9  ;add 9 to R4, to make #19
 17	JMP R4          ;jump to 20 (load 20 into the PC)
-18	STR R1, R3, #0  ;set mem addr 33 to the value stored in R2
+18	STR R1, R3, #0  ;set mem addr 33 to the value stored in R1
 19	HALT
 
 0	0101 0010 0110 0000		0x5260
@@ -85,7 +85,7 @@ PC:
 13	0111 0100 1100 0000		0x74C0
 14	0101 1001 0010 0000		0x5920
 15	0001 1001 0010 1010		0x192A
-16	0001 1001 0000 0100		0x1904
+16	0001 1001 0010 1001		0x1929
 17	1100 0001 0000 0000		0xC100
 18	0111 0010 1100 0000		0x72C0
 19	1000 0000 0000 0000		0x8000
