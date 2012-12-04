@@ -20,6 +20,12 @@ char* _debug_monitor_helper_set_line(Debug *this, unsigned short line)
             if(temp < 0) temp = 0;
             this->start = temp;
             this->end = this->start + 0xF;
+
+            if(this->end  > LCPLUS_MEMORY_SIZE)
+            {
+                this->end = LCPLUS_MEMORY_SIZE;
+                this->start = this->end - 0xF;
+            }
         }
     }
     return 0;

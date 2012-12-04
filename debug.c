@@ -90,7 +90,7 @@ char* debug_do_step_ask( Debug *this, CPU *cpu , Registers *registers, Memory *m
             case 4:
             {
                 printf("\033[%d;%dH                                                                                ",_D_INPUT_SX,_D_INPUT_SY);
-                printf("\033[%d;%dH:: GOTO",_D_INPUT_SX+1,_D_INPUT_SY);
+                printf("\033[%d;%dH:: GOTO",_D_INPUT_SX,_D_INPUT_SY);
                 int location;
                 do
                 {
@@ -104,7 +104,7 @@ char* debug_do_step_ask( Debug *this, CPU *cpu , Registers *registers, Memory *m
                         printf("\033[%d;%dHInvalid Input ",_D_INPUT_SX+2,_D_INPUT_SY);
                         while (getchar() != '\n'); //remove offending characters
                         retry = 1;
-                    } else if(answer < 0 || answer > LCPLUS_MEMORY_SIZE) {
+                    } else if(location < 0 || location > LCPLUS_MEMORY_SIZE) {
                         printf("\033[%d;%dH                                                                                ",_D_INPUT_SX+2,_D_INPUT_SY);
                         printf("\033[%d;%dHOut of Bounds ",_D_INPUT_SX+2,_D_INPUT_SY);
                         retry = 1;
