@@ -203,7 +203,7 @@
 	"or_gate.h"
 	"and_gate.h"
 
-1354559223 source:c:\users\mojito\documents\github\tcss371_final_project\debug.c
+1354595313 source:c:\users\mojito\documents\github\tcss371_final_project\debug.c
 	"debug.h"
 	"debug_display.h"
 	"read_file.h"
@@ -262,7 +262,7 @@
 	"debug_display.h"
 	<stdio.h>
 
-1354505935 c:\users\mojito\documents\github\tcss371_final_project\debug_display.h
+1354559769 c:\users\mojito\documents\github\tcss371_final_project\debug_display.h
 	"debug.h"
 	"cpu.h"
 	"registers.h"

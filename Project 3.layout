@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="CPU.c" open="1" top="0" tabpos="2">
-		<Cursor position="54" topLine="0" />
+	<File name="CPU.c" open="0" top="0" tabpos="5">
+		<Cursor position="485" topLine="0" />
 	</File>
-	<File name="CPU.h" open="1" top="0" tabpos="2">
-		<Cursor position="54" topLine="0" />
+	<File name="CPU.h" open="0" top="0" tabpos="6">
+		<Cursor position="273" topLine="0" />
 	</File>
-	<File name="alu.c" open="1" top="0" tabpos="2">
-		<Cursor position="20" topLine="12" />
+	<File name="alu.c" open="0" top="0" tabpos="4">
+		<Cursor position="4278" topLine="90" />
 	</File>
 	<File name="alu.h" open="0" top="0" tabpos="5">
 		<Cursor position="91" topLine="0" />
 	</File>
-	<File name="controller.c" open="1" top="0" tabpos="6">
-		<Cursor position="411" topLine="0" />
+	<File name="controller.c" open="0" top="0" tabpos="1">
+		<Cursor position="7788" topLine="198" />
 	</File>
-	<File name="controller.h" open="0" top="0" tabpos="4">
-		<Cursor position="108" topLine="78" />
+	<File name="controller.h" open="0" top="0" tabpos="7">
+		<Cursor position="190" topLine="0" />
 	</File>
-	<File name="debug.c" open="1" top="1" tabpos="1">
-		<Cursor position="836" topLine="2" />
+	<File name="debug.c" open="1" top="1" tabpos="0">
+		<Cursor position="381" topLine="0" />
 	</File>
-	<File name="debug.h" open="1" top="0" tabpos="2">
-		<Cursor position="528" topLine="0" />
+	<File name="debug.h" open="0" top="0" tabpos="8">
+		<Cursor position="164" topLine="0" />
 	</File>
-	<File name="lc-plus.c" open="1" top="0" tabpos="3">
-		<Cursor position="982" topLine="3" />
+	<File name="lc-plus.c" open="0" top="0" tabpos="11">
+		<Cursor position="404" topLine="0" />
 	</File>
 	<File name="lc-plus.h" open="0" top="0" tabpos="0">
-		<Cursor position="248" topLine="0" />
+		<Cursor position="186" topLine="0" />
 	</File>
-	<File name="main.c" open="1" top="0" tabpos="9">
-		<Cursor position="359" topLine="6" />
+	<File name="main.c" open="0" top="0" tabpos="12">
+		<Cursor position="951" topLine="9" />
 	</File>
-	<File name="memory.c" open="0" top="0" tabpos="0">
-		<Cursor position="1089" topLine="0" />
+	<File name="memory.c" open="0" top="0" tabpos="3">
+		<Cursor position="1192" topLine="0" />
 	</File>
-	<File name="memory.h" open="0" top="0" tabpos="0">
-		<Cursor position="187" topLine="0" />
+	<File name="memory.h" open="0" top="0" tabpos="9">
+		<Cursor position="189" topLine="0" />
 	</File>
-	<File name="psr.c" open="1" top="0" tabpos="8">
+	<File name="psr.c" open="0" top="0" tabpos="8">
 		<Cursor position="946" topLine="0" />
 	</File>
-	<File name="psr.h" open="0" top="0" tabpos="6">
-		<Cursor position="499" topLine="0" />
+	<File name="psr.h" open="0" top="0" tabpos="10">
+		<Cursor position="743" topLine="0" />
 	</File>
 	<File name="rca.c" open="0" top="0" tabpos="6">
-		<Cursor position="51" topLine="0" />
+		<Cursor position="1198" topLine="19" />
 	</File>
 	<File name="rca.h" open="0" top="0" tabpos="5">
 		<Cursor position="375" topLine="0" />
@@ -55,16 +55,16 @@
 	<File name="readme.txt" open="1" top="0" tabpos="2">
 		<Cursor position="2" topLine="0" />
 	</File>
-	<File name="register.c" open="1" top="0" tabpos="7">
-		<Cursor position="479" topLine="0" />
+	<File name="register.c" open="0" top="0" tabpos="7">
+		<Cursor position="803" topLine="0" />
 	</File>
 	<File name="register.h" open="0" top="0" tabpos="0">
 		<Cursor position="54" topLine="0" />
 	</File>
-	<File name="registers.c" open="1" top="0" tabpos="4">
-		<Cursor position="613" topLine="28" />
+	<File name="registers.c" open="0" top="0" tabpos="2">
+		<Cursor position="333" topLine="0" />
 	</File>
-	<File name="registers.h" open="1" top="0" tabpos="5">
+	<File name="registers.h" open="0" top="0" tabpos="5">
 		<Cursor position="279" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>

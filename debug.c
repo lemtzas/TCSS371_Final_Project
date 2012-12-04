@@ -50,7 +50,7 @@ char* debug_do_step_ask( Debug *this, CPU *cpu , Registers *registers, Memory *m
                 printf("\033[%d;%dHInvalid input!",_D_INPUT_SX+1,_D_INPUT_SY);
                 while (getchar() != '\n'); //remove offending characters
                 retry = 1;
-            } else if(answer < 0 || answer > 5) {
+            } else if(answer < 0 || answer > 6) {
                 printf("\033[%d;%dH                                                                                ",_D_INPUT_SX+1,_D_INPUT_SY);
                 printf("\033[%d;%dHOut of Bounds!",_D_INPUT_SX+1,_D_INPUT_SY);
                 retry = 1;
@@ -129,6 +129,6 @@ char* debug_do_step_ask( Debug *this, CPU *cpu , Registers *registers, Memory *m
             default:
                 printf("wat");
         }
-    } while(answer != 5);
+    } while(answer != 6);
     return error;
 }
