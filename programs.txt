@@ -56,8 +56,8 @@ PC:
 5	ST  R2, #25     ;set mem addr 31 to #2 (PC=6, +25=31)
 6	LD  R1, #24     ;load value from mem addr 31 into R1
 7	LD  R2, #22     ;load value from mem addr 30 into R2
-8   AND R6, R6, #0  ;initialize R3
-9   LEA R6, #23     ;load #33 into R3
+8   AND R6, R6, #0  ;initialize R6
+9   LEA R6, #23     ;load #33 into R6
 10	SUB R3, R1, R2  ;subtract R2 from R1 and store in R3 (switch for other branch)
 11	ST  R3, #20     ;set mem addr 32 to the value stored in R3
 12	BRn #5          ;load #18 into the PC if condition negative
@@ -78,7 +78,7 @@ PC:
 6	0010 0010 0001 1000		0x2218
 7	0010 0100 0001 0110		0x2416
 8	0101 1101 1010 0000		0x5DA0
-9	1110 1100 0001 0111		0xEC05
+9	1110 1100 0001 0111		0xEC17
 10	1101 0110 0100 0010		0xD642	or	1101 0110 1000 0001		0xD681
 11	0011 0110 0001 0100		0x3614
 12	0000 0010 0000 0101		0x0205
