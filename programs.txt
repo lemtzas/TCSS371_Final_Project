@@ -56,17 +56,17 @@ PC:
 5	ST  R2, #25     ;set mem addr 31 to #2 (PC=6, +25=31)
 6	LD  R1, #24     ;load value from mem addr 31 into R1
 7	LD  R2, #22     ;load value from mem addr 30 into R2
-8	SUB R3, R1, R2  ;subtract R2 from R1 and store in R3 (switch for other branch)
-9	ST  R3, #22     ;set mem addr 32 to the value stored in R3
-10  AND R3, R3, #0  ;initialize R3
-11  LEA R3, #21     ;load #33 into R3
+8   AND R6, R6, #0  ;initialize R3
+9   LEA R6, #23     ;load #33 into R3
+10	SUB R3, R1, R2  ;subtract R2 from R1 and store in R3 (switch for other branch)
+11	ST  R3, #20     ;set mem addr 32 to the value stored in R3
 12	BRn #5          ;load #18 into the PC if condition negative
-13	STR R2, R3, #0  ;set mem addr 33 to the value stored in R2
+13	STR R2, R6, #0  ;set mem addr 33 to the value stored in R2
 14	AND R4, R4, #0  ;initialize R4
 15	ADD R4, R4, #10 ;set R4 to 10
 16	ADD R4, R4, #9  ;add 9 to R4, to make #19
 17	JMP R4          ;jump to 20 (load 20 into the PC)
-18	STR R1, R3, #0  ;set mem addr 33 to the value stored in R1
+18	STR R1, R6, #0  ;set mem addr 33 to the value stored in R1
 19	HALT
 
 0	0101 0010 0110 0000		0x5260
@@ -77,17 +77,17 @@ PC:
 5	0011 0100 0001 1001		0x3419
 6	0010 0010 0001 1000		0x2218
 7	0010 0100 0001 0110		0x2416
-8	1101 0110 0100 0010		0xD642	or	1101 0110 1000 0001		0xD681
-9	0011 0110 0001 0110		0x3616
-10	0101 0110 1110 0000		0x56E0
-11	1110 0110 0001 0101		0xE615
+8	0101 1101 1010 0000		0x5DA0
+9	1110 1100 0001 0111		0xEC05
+10	1101 0110 0100 0010		0xD642	or	1101 0110 1000 0001		0xD681
+11	0011 0110 0001 0100		0x3614
 12	0000 0010 0000 0101		0x0205
-13	0111 0100 1100 0000		0x74C0
+13	0111 0101 1000 0000		0x7580
 14	0101 1001 0010 0000		0x5920
 15	0001 1001 0010 1010		0x192A
 16	0001 1001 0010 1001		0x1929
 17	1100 0001 0000 0000		0xC100
-18	0111 0010 1100 0000		0x72C0
+18	0111 0011 1000 0000		0x7380
 19	1000 0000 0000 0000		0x8000
 
 
