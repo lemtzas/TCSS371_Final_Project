@@ -20,13 +20,16 @@
 		<Cursor position="190" topLine="0" />
 	</File>
 	<File name="debug.c" open="1" top="1" tabpos="1">
-		<Cursor position="4320" topLine="72" />
+		<Cursor position="211" topLine="69" />
 	</File>
 	<File name="debug.h" open="0" top="0" tabpos="8">
 		<Cursor position="164" topLine="0" />
 	</File>
-	<File name="lc-plus.c" open="0" top="0" tabpos="11">
-		<Cursor position="404" topLine="0" />
+	<File name="debug_display.c" open="1" top="0" tabpos="2">
+		<Cursor position="888" topLine="0" />
+	</File>
+	<File name="lc-plus.c" open="1" top="0" tabpos="3">
+		<Cursor position="834" topLine="15" />
 	</File>
 	<File name="lc-plus.h" open="0" top="0" tabpos="0">
 		<Cursor position="186" topLine="0" />
